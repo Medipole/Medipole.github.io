@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Payton">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Matlab 课堂入门笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab基础(四)符号计算">
+<meta property="og:url" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/index.html">
+<meta property="og:site_name" content="Payton 随笔">
+<meta property="og:description" content="Matlab 课堂入门笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/2.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/3.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/4.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/5.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/6.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/7.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/8.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/9.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/10.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/11.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/12.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/13.png">
+<meta property="article:published_time" content="2025-03-18T12:49:09.000Z">
+<meta property="article:modified_time" content="2025-03-18T13:09:35.117Z">
+<meta property="article:author" content="Payton">
+<meta property="article:tag" content="Matlab">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
+  
+  
+  
+  <title>Matlab基础(四)符号计算 - Payton 随笔</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"medipole.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Payton 666</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Matlab基础(四)符号计算"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-18 20:49" pubdate>
+          2025年3月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Matlab基础(四)符号计算</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li>MATLAB中，符号表达式有&#x3D;&#x3D;符号函数&#x3D;&#x3D;和&#x3D;&#x3D;符号方程&#x3D;&#x3D;两种</li>
+<li>字符就是符号变量的值</li>
+<li>符号表达式被表示为字符串或者字符串组</li>
+</ul>
+<h1 id="1-符号变量-表达式的定义-syms"><a href="#1-符号变量-表达式的定义-syms" class="headerlink" title="1.符号变量\表达式的定义  syms"></a>1.符号变量\表达式的定义  <code>syms</code></h1><p>  符号变量通过命令<code>syms</code>定义，可同时定义多个<br>  Matlab系统有默认的符号自变量,主要为：<code>x,x1,y,y1,z,v,u,t,theta,alpha</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms x y u v <br>f=x*<span class="hljs-built_in">log</span>(x)+y*u<br></code></pre></td></tr></table></figure>
+
+<h1 id="2-符号矩阵的运算"><a href="#2-符号矩阵的运算" class="headerlink" title="2.符号矩阵的运算"></a>2.符号矩阵的运算</h1><p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/2.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/3.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/4.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="3-符号表达式运算"><a href="#3-符号表达式运算" class="headerlink" title="3.符号表达式运算"></a>3.符号表达式运算</h1><h3 id="1-基本运算"><a href="#1-基本运算" class="headerlink" title="(1)基本运算"></a>(1)基本运算</h3><h4 id="collect-S-v-——-按指定变量v的次数对符号多项式S合并同类项"><a href="#collect-S-v-——-按指定变量v的次数对符号多项式S合并同类项" class="headerlink" title="collect(S,v)—— 按指定变量v的次数对符号多项式S合并同类项"></a><code>collect(S,v)</code>—— 按指定变量<code>v</code>的次数对符号多项式<code>S</code>合并同类项</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">collect(x^<span class="hljs-number">2</span>*y+y*x-x^<span class="hljs-number">2</span><span class="hljs-number">-2</span>*x)<span class="hljs-comment">%此处默认x为符号变量</span><br><span class="hljs-built_in">ans</span> = (y - <span class="hljs-number">1</span>)*x^<span class="hljs-number">2</span> + (y - <span class="hljs-number">2</span>)*x<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">collect(x^<span class="hljs-number">2</span>*y+y*x-x^<span class="hljs-number">2</span><span class="hljs-number">-2</span>*x,y)<span class="hljs-comment">%此处选择y为符号变量</span><br>        <span class="hljs-built_in">ans</span> =(x^<span class="hljs-number">2</span> + x)*y - x^<span class="hljs-number">2</span> - <span class="hljs-number">2</span>*x<br></code></pre></td></tr></table></figure>
+
+<h4 id="expand-S-——-将符号表达式S展开"><a href="#expand-S-——-将符号表达式S展开" class="headerlink" title="expand(S) —— 将符号表达式S展开"></a><code>expand(S)</code> —— 将符号表达式<code>S</code>展开</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms x<br>p = (x - <span class="hljs-number">2</span>)*(x - <span class="hljs-number">4</span>);<br>expand(p)<br><br><span class="hljs-built_in">ans</span> =<br>    x^<span class="hljs-number">2</span> - <span class="hljs-number">6</span>*x + <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="factor-x-——-将符号表达式x因式分解。"><a href="#factor-x-——-将符号表达式x因式分解。" class="headerlink" title="factor(x) —— 将符号表达式x因式分解。"></a><code>factor(x)</code> —— 将符号表达式<code>x</code>因式分解。</h4><h4 id="N-D-numden-A-求符号表达式A的分子N和分母D"><a href="#N-D-numden-A-求符号表达式A的分子N和分母D" class="headerlink" title="[N,D]=numden(A) % 求符号表达式A的分子N和分母D"></a><code>[N,D]=numden(A)</code> % 求符号表达式A的分子N和分母D</h4><h4 id="simplify——对符号表达式S进行化简"><a href="#simplify——对符号表达式S进行化简" class="headerlink" title="simplify——对符号表达式S进行化简"></a><code>simplify</code>——对符号表达式S进行化简</h4><h4 id="size——求矩阵的维数"><a href="#size——求矩阵的维数" class="headerlink" title="size——求矩阵的维数"></a><code>size</code>——求矩阵的维数</h4><h3 id="2-符号变量的操作"><a href="#2-符号变量的操作" class="headerlink" title="(2)符号变量的操作"></a>(2)符号变量的操作</h3><h4 id="symvar"><a href="#symvar" class="headerlink" title="symvar"></a><code>symvar</code></h4><p>  C &#x3D; symvar(expr)搜索表达式 expr，查找除 i、j、pi、inf、nan、eps 和公共函数之外的标识符。这些标识符是表达式中变量的名称。</p>
+<h4 id="subs-S-old-new"><a href="#subs-S-old-new" class="headerlink" title="subs(S,old,new)"></a><code>subs(S,old,new)</code></h4><p>   用变量new替换符号表达式或者符号矩阵S中的变量old</p>
+<pre><code class="hljs"><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">  &gt;&gt; syms a  b<br>&gt;&gt; subs(a*b^<span class="hljs-number">2</span>,a*b,<span class="hljs-number">5</span>)<br><span class="hljs-built_in">ans</span> =<br><span class="hljs-number">5</span>*b<br></code></pre></td></tr></table></figure>
+</code></pre>
+<hr>
+<p>（已被淘汰）</p>
+<ul>
+<li>findsym(S):求符号表达式或符号矩阵S中的符号变量</li>
+</ul>
+<hr>
+<h3 id="3-符号函数计算"><a href="#3-符号函数计算" class="headerlink" title="(3)符号函数计算"></a>(3)符号函数计算</h3><h4 id="conj-A"><a href="#conj-A" class="headerlink" title="conj(A)"></a><code>conj(A)</code></h4><p>  求符号复数A的共轭复数<br>  <code>real(Z)</code>——求符号复数的实部<br>  <code>imag(Z)</code>—— 求符号复数的虚部</p>
+<h4 id="compose"><a href="#compose" class="headerlink" title="compose"></a><code>compose</code></h4><p>  compose(f,g)，求f&#x3D;f(y),g&#x3D;g(x)的复合函数<code>f[g(x)]</code><br>  当函数自变量不清晰时，可用:<br>  compose(f,g,y,x) —— 指明<code>f</code>是变量<code>y</code>的函数，<code>g</code>是变量<code>x</code>的函数<br>  compose(f,g,y,x,z) —— 将最终的复合函数自变量替换为<code>z</code></p>
+<pre><code class="hljs"><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; f=a^<span class="hljs-number">3</span>+b<br>f =<br>a^<span class="hljs-number">3</span> + b<br>&gt;&gt; g=<span class="hljs-number">2</span>*x^<span class="hljs-number">3</span>+<span class="hljs-built_in">sin</span>(y)<br>g =<br><span class="hljs-number">2</span>*x^<span class="hljs-number">3</span> + <span class="hljs-built_in">sin</span>(y)<br>&gt;&gt; compose(f,g,b,x,z)<br><span class="hljs-built_in">ans</span> =<br>a^<span class="hljs-number">3</span> + <span class="hljs-number">2</span>*z^<span class="hljs-number">3</span> + <span class="hljs-built_in">sin</span>(y)<br></code></pre></td></tr></table></figure>
+</code></pre>
+<ul>
+<li><code>finverse</code><br>g&#x3D;finverse(f)——求符号函数<code>f</code>的反函数<code>g</code><br>g&#x3D;finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</code>的反函数<code>g</code></li>
+</ul>
+<h3 id="4-符号多项式"><a href="#4-符号多项式" class="headerlink" title="(4)符号多项式"></a>(4)符号多项式</h3><h4 id="r-poly2sym-P-v-按指定变量v将数值系数向量p转化为符号变量多项式r"><a href="#r-poly2sym-P-v-按指定变量v将数值系数向量p转化为符号变量多项式r" class="headerlink" title="r=poly2sym(P,v):按指定变量v将数值系数向量p转化为符号变量多项式r"></a><code>r=poly2sym(P,v)</code>:按指定变量<code>v</code>将数值系数向量<code>p</code>转化为符号变量多项式<code>r</code></h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; f=poly2sym([<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> ],x)<br>f =<br>x^<span class="hljs-number">4</span> + <span class="hljs-number">2</span>*x^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*x^<span class="hljs-number">2</span> + <span class="hljs-number">4</span>*x + <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h1 id="4-符号微积分"><a href="#4-符号微积分" class="headerlink" title="4.符号微积分"></a>4.符号微积分</h1><h3 id="（1）符号函数的极限"><a href="#（1）符号函数的极限" class="headerlink" title="（1）符号函数的极限"></a>（1）符号函数的极限</h3><p><code>limit(F,x,a)</code>——计算当<code>x</code>趋向于<code>a</code>时，符号表达式<code>F</code>的极限值；<br><code>limit(F,x,a,&#39;right&#39;)</code>——计算当<code>x</code>趋向于<code>a</code>时，符号表达式<code>F</code>的右极限值；<br><code>limit(F,x,a,&#39;left&#39;)</code>——计算当<code>x</code>趋向于<code>a</code>时，符号表达式<code>F</code>的左极限值；</p>
+<p>注：极限用<code>inf</code>表示</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x<br>&gt;&gt; limit(<span class="hljs-built_in">atan</span>(x),x,-<span class="hljs-built_in">inf</span>)<br><br><span class="hljs-built_in">ans</span> =<br><br>-<span class="hljs-built_in">pi</span>/<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h3 id="（2）符号函数的导数"><a href="#（2）符号函数的导数" class="headerlink" title="（2）符号函数的导数"></a>（2）符号函数的导数</h3><h4 id="diff-S-v-n-计算符号表达式S对自变量v的n阶导数。"><a href="#diff-S-v-n-计算符号表达式S对自变量v的n阶导数。" class="headerlink" title="diff(S,v,n):计算符号表达式S对自变量v的n阶导数。"></a><code>diff(S,v,n)</code>:计算符号表达式<code>S</code>对自变量<code>v</code>的<code>n</code>阶导数。</h4><p>（v,n可忽略）<br>例子：求二元函数<br>$$<br>\tfrac{2xy}{x^2+y^2}<br>$$<br>的两个一阶偏导数和三个二阶偏导数:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x y<br>&gt;&gt; S=(<span class="hljs-number">2</span>*x*y)/(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>)<br>S =<br>(<span class="hljs-number">2</span>*x*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)<br><br>&gt;&gt; DIF_X_1=diff(S,x,<span class="hljs-number">1</span>)<br>DIF_X_1 =<br>(<span class="hljs-number">2</span>*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>) - (<span class="hljs-number">4</span>*x^<span class="hljs-number">2</span>*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span><br><br>&gt;&gt; DIF_Y_1=diff(S,y,<span class="hljs-number">1</span>)<br>DIF_Y_1 =<br>(<span class="hljs-number">2</span>*x)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>) - (<span class="hljs-number">4</span>*x*y^<span class="hljs-number">2</span>)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span><br><br>&gt;&gt; DIF_X_2=diff(S,x,<span class="hljs-number">2</span>)<br>DIF_X_2 =<br>(<span class="hljs-number">16</span>*x^<span class="hljs-number">3</span>*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">3</span> - (<span class="hljs-number">12</span>*x*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span><br><br>&gt;&gt; DIF_Y_2=diff(S,y,<span class="hljs-number">2</span>)<br>DIF_Y_2 =<br>(<span class="hljs-number">16</span>*x*y^<span class="hljs-number">3</span>)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">3</span> - (<span class="hljs-number">12</span>*x*y)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span><br><br>&gt;&gt; DIF_XY_2=diff(DIF_X_1,y)<br>DIF_XY_2 =<br><span class="hljs-number">2</span>/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>) - (<span class="hljs-number">4</span>*x^<span class="hljs-number">2</span>)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span> - (<span class="hljs-number">4</span>*y^<span class="hljs-number">2</span>)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">2</span> + (<span class="hljs-number">16</span>*x^<span class="hljs-number">2</span>*y^<span class="hljs-number">2</span>)/(x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>)^<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h3 id="（3）符号函数的积分"><a href="#（3）符号函数的积分" class="headerlink" title="（3）符号函数的积分"></a>（3）符号函数的积分</h3><h4 id="int-S-v-对符号表达式S中的指定变量v求S的不定积分"><a href="#int-S-v-对符号表达式S中的指定变量v求S的不定积分" class="headerlink" title="int(S,v)对符号表达式S中的指定变量v求S的不定积分"></a><code>int(S,v)</code>对符号表达式<code>S</code>中的指定变量<code>v</code>求<code>S</code>的不定积分</h4><h4 id="int-S-v-a-b-对符号表达式S中的指定变量v在区间-a-b-上，求S的定积分"><a href="#int-S-v-a-b-对符号表达式S中的指定变量v在区间-a-b-上，求S的定积分" class="headerlink" title="int(S,v,a,b)对符号表达式S中的指定变量v在区间[a,b]上，求S的定积分"></a><code>int(S,v,a,b)</code>对符号表达式<code>S</code>中的指定变量<code>v</code>在区间<code>[a,b]</code>上，求<code>S</code>的定积分</h4><p>例子：计算不定积分<br>$$<br>f(x) &#x3D; \int_\ e^{2x}cos3xdx,.<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; f=<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)*<span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x)<br>f =<br><span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x)*<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)<br>&gt;&gt; F=int(f,x)<br>F =<br>(<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)*(<span class="hljs-number">2</span>*<span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x) + <span class="hljs-number">3</span>*<span class="hljs-built_in">sin</span>(<span class="hljs-number">3</span>*x)))/<span class="hljs-number">1</span><br><br><span class="hljs-comment">%验证正确性</span><br>&gt;&gt; diff(F)<br><span class="hljs-built_in">ans</span> =<br>(<span class="hljs-number">2</span>*<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)*(<span class="hljs-number">2</span>*<span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x) + <span class="hljs-number">3</span>*<span class="hljs-built_in">sin</span>(<span class="hljs-number">3</span>*x)))/<span class="hljs-number">13</span> + (<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)*(<span class="hljs-number">9</span>*<span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x) - <span class="hljs-number">6</span>*<span class="hljs-built_in">sin</span>(<span class="hljs-number">3</span>*x)))/<span class="hljs-number">13</span><br><br>&gt;&gt; simplify (<span class="hljs-built_in">ans</span>)<br><span class="hljs-built_in">ans</span> =<br><span class="hljs-built_in">cos</span>(<span class="hljs-number">3</span>*x)*<span class="hljs-built_in">exp</span>(<span class="hljs-number">2</span>*x)<br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h3 id="（4）级数求和与函数的级数展开"><a href="#（4）级数求和与函数的级数展开" class="headerlink" title="（4）级数求和与函数的级数展开"></a>（4）级数求和与函数的级数展开</h3><h4 id="symsum-S-v-a-b-：对符号表达式S中的指定变量v从a到b求和。"><a href="#symsum-S-v-a-b-：对符号表达式S中的指定变量v从a到b求和。" class="headerlink" title="symsum(S,v,a,b)：对符号表达式S中的指定变量v从a到b求和。"></a><code>symsum(S,v,a,b)</code>：对符号表达式<code>S</code>中的指定变量<code>v</code>从<code>a</code>到<code>b</code>求和。</h4><p>例子：求和<br>$$<br>1+2+3+……+n&#x3D;\sum_{k &#x3D; 1}^{n} k<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms k n<br>&gt;&gt; F1 = symsum(k,k,<span class="hljs-number">1</span>,n)<br>F1 =<br>(n*(n + <span class="hljs-number">1</span>))/<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h4 id="T-taylor（f，var，a）近似于-f，在点-var-a-处用-f-的泰勒级数展开。"><a href="#T-taylor（f，var，a）近似于-f，在点-var-a-处用-f-的泰勒级数展开。" class="headerlink" title="T = taylor（f，var，a）近似于 f，在点 var = a 处用 f 的泰勒级数展开。"></a><code>T = taylor（f，var，a）</code>近似于<code> f</code>，在点 <code>var = a</code> 处用 <code>f</code> 的泰勒级数展开。</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms x<br>T1 = taylor(<span class="hljs-built_in">exp</span>(x))<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/5.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">T2 = taylor(<span class="hljs-built_in">sin</span>(x))<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/6.png" srcset="/img/loading.gif" lazyload><br>（默认展开5阶）<br>&emsp;</p>
+<p>&emsp;</p>
+<h3 id="（5）符号函数求解"><a href="#（5）符号函数求解" class="headerlink" title="（5）符号函数求解"></a>（5）符号函数求解</h3><h4 id="solve函数——方程和系统求解器"><a href="#solve函数——方程和系统求解器" class="headerlink" title="solve函数——方程和系统求解器"></a><code>solve函数</code>——方程和系统求解器</h4><p><code>solve(eq,v)</code>：对指定变量v求解方程eq的根。</p>
+<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/7.png" srcset="/img/loading.gif" lazyload></p>
+<p>指定<code>v</code>时：<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/8.png" srcset="/img/loading.gif" lazyload><br>&emsp;<br>&emsp;<br>&emsp;<br>&#x3D;&#x3D;<code>solve</code>函数也可以求解方程组与不等式。&#x3D;&#x3D;</p>
+<ul>
+<li>求解多个变量时，将输出存储在结构数组中比存储在单独的变量中更方便。</li>
+<li>当您指定单个输出参数并且存在多个输出时，solve 函数将返回一个结构。</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms u v<br>eqns = [<span class="hljs-number">2</span>*u + v == <span class="hljs-number">0</span>, u - v == <span class="hljs-number">1</span>];<br>S = solve(eqns,[u v])<br>S = <br> 包含以下字段的 struct:<br>u: <span class="hljs-number">1</span>/<span class="hljs-number">3</span><br>v: <span class="hljs-number">-2</span>/<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p>&emsp;<br>例子：<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/9.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms u v<br>eqns = [<span class="hljs-number">2</span>*u^<span class="hljs-number">2</span> + v^<span class="hljs-number">2</span> == <span class="hljs-number">0</span>, u - v == <span class="hljs-number">1</span>];<br>vars = [v u];<br>[solv, solu] = solve(eqns,vars)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/10.png" srcset="/img/loading.gif" lazyload><br>&emsp;<br>&emsp;<br>&emsp;</p>
+<ul>
+<li><p>&#x3D;&#x3D;解决高阶多项式方程&#x3D;&#x3D;<br>解决高阶多项式方程时，<code>solve</code>函数可能返回含root的隐式解，尝试通过使用<code>“MaxDegree”</code>调用求解器来获得此类方程的显式解。该选项指定求解器尝试返回显式解的最大多项式次数。默认值为 <code>2</code>。增加此值，您可以获得高阶多项式的显式解。<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/11.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x<br>p = x^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*x - <span class="hljs-number">16</span>;<br>R = solve(p,x)<br>R =<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">1</span>)<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">2</span>)<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">3</span>)<br>&gt;&gt; Rexplicit = solve(p,x,<span class="hljs-string">&quot;MaxDegree&quot;</span>,<span class="hljs-number">3</span>)<br>Rexplicit =<br>                                                                     (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) - <span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)<br><span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)) - (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)/<span class="hljs-number">2</span> - (<span class="hljs-number">3</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)*(<span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) + (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))*<span class="hljs-number">1</span><span class="hljs-built_in">i</span>)/<span class="hljs-number">2</span><br><span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)) - (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)/<span class="hljs-number">2</span> + (<span class="hljs-number">3</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)*(<span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) + (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))*<span class="hljs-number">1</span><span class="hljs-built_in">i</span>)/<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>&emsp;<br>&emsp;<br>&emsp;</p>
+<ul>
+<li>&#x3D;&#x3D;solve函数可以求解不等式并返回满足不等式的解&#x3D;&#x3D;。解决以下不等式<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/12.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x y<br>eqn1 = x &gt; <span class="hljs-number">0</span>;<br>eqn2 = y &gt; <span class="hljs-number">0</span>;<br>eqn3 = x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span> + x*y &lt; <span class="hljs-number">1</span>;<br>eqns = [eqn1 eqn2 eqn3];<br><br>S = solve(eqns,[x y],<span class="hljs-string">&#x27;ReturnConditions&#x27;</span>,<span class="hljs-built_in">true</span>);<br>&gt;&gt; S<br>S = <br>  包含以下字段的 struct:<br><br>             x: (- <span class="hljs-number">3</span>*v^<span class="hljs-number">2</span> + u)^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)/<span class="hljs-number">2</span> - v/<span class="hljs-number">2</span><br>             y: v<br>    parameters: [u    v]<br>    conditions: <span class="hljs-number">4</span>*v^<span class="hljs-number">2</span> &lt; u &amp; u &lt; <span class="hljs-number">4</span> &amp; <span class="hljs-number">0</span> &lt; v<br></code></pre></td></tr></table></figure>
+
+<p>&emsp;</p>
+<h4 id="fsolve函数——对非线性方程组求解"><a href="#fsolve函数——对非线性方程组求解" class="headerlink" title="fsolve函数——对非线性方程组求解"></a><code>fsolve函数</code>——对非线性方程组求解</h4><p><code>x = fsolve(fun,x0)</code> 从 <code>x0</code> 开始，尝试求解方程 <code>fun(x) = 0</code>（全零数组）。</p>
+<p>需要一个函数文件 root2d.m</p>
+<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/13.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="（6）符号积分变换"><a href="#（6）符号积分变换" class="headerlink" title="（6）符号积分变换"></a>（6）符号积分变换</h3><p>（学完信号与系统后补充）</p>
+<h4 id="①Laplace变换"><a href="#①Laplace变换" class="headerlink" title="①Laplace变换"></a>①Laplace变换</h4><h4 id="②Z变换"><a href="#②Z变换" class="headerlink" title="②Z变换"></a>②Z变换</h4><h4 id="③Fourier变换"><a href="#③Fourier变换" class="headerlink" title="③Fourier变换"></a>③Fourier变换</h4>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Matlab/" class="category-chain-item">Matlab</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Matlab/" class="print-no-link">#Matlab</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Matlab基础(四)符号计算</div>
+      <div>https://medipole.github.io/2025/03/18/Matlab基础-四-符号计算/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Payton</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/" title="Matlab基础(五)可视化功能">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Matlab基础(五)可视化功能</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" title="Matlab基础(三)数值计算">
+                        <span class="hidden-mobile">Matlab基础(三)数值计算</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://blog.csdn.net/m0_74970386?type=blog" target="_blank" rel="nofollow noopener"><span>CSDN</span></a> <i class="iconfont icon-love"></i> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
