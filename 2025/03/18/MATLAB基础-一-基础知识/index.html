@@ -46,6 +46,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -223,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          974 字
+          925 字
         
       </span>
     
@@ -234,7 +236,7 @@
         
         
         
-          9 分钟
+          8 分钟
         
       </span>
     
@@ -276,148 +278,200 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1-文件分类"><a href="#1-文件分类" class="headerlink" title="1.文件分类"></a>1.文件分类</h2><ul>
+                <h2 id="1-文件分类">1.文件分类</h2>
+<ul>
 <li>脚本文件——.m</li>
 <li>数据文件——.mat</li>
 </ul>
-<h2 id="2-变量与赋值"><a href="#2-变量与赋值" class="headerlink" title="2.变量与赋值"></a>2.变量与赋值</h2><ul>
-<li><p>变量区分大小写</p>
+<h2 id="2-变量与赋值">2.变量与赋值</h2>
 <ul>
-<li><p>语句末尾输入分号可以抑制结果的输出</p>
+<li>
+<p>变量区分大小写</p>
+<ul>
+<li>
+<p>语句末尾输入分号可以抑制结果的输出</p>
 </li>
-<li><p>若未定义变量，则运算结果存储至默认变量ans</p>
+<li>
+<p>若未定义变量，则运算结果存储至默认变量ans</p>
 </li>
-<li><p>重复使用命令的快捷方式是向上的方向键</p>
+<li>
+<p>重复使用命令的快捷方式是向上的方向键</p>
 </li>
-<li><p>变量类型</p>
+<li>
+<p>变量类型</p>
 <blockquote>
-<p>浮点数：single 、double<br>整数类型：int8、int16、int32、int64——数字代表存储该类型所用的二进制位数<br>无符号整数： uint8、uint16、uint32、uint64</p>
+<p>浮点数：single 、double<br>
+整数类型：int8、int16、int32、int64——数字代表存储该类型所用的二进制位数<br>
+无符号整数： uint8、uint16、uint32、uint64</p>
 </blockquote>
 </li>
-<li><p>class函数可以用来查看变量类型</p>
+<li>
+<p>class函数可以用来查看变量类型</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="3-表达式"><a href="#3-表达式" class="headerlink" title="3.表达式"></a>3.表达式</h2><h3 id="（1）format-函数"><a href="#（1）format-函数" class="headerlink" title="（1）format 函数"></a>（1）format 函数</h3><ul>
-<li><p>format short : 数字小数部分默认显示4位（默认设置）</p>
+<h2 id="3-表达式">3.表达式</h2>
+<h3 id="（1）format-函数">（1）format 函数</h3>
+<ul>
+<li>
+<p>format short : 数字小数部分默认显示4位（默认设置）</p>
 </li>
-<li><p>format long : 数字小数部分默认显示15位</p>
+<li>
+<p>format long : 数字小数部分默认显示15位</p>
 </li>
-<li><p>format loose :语句之间大空格</p>
+<li>
+<p>format loose :语句之间大空格</p>
 </li>
-<li><p>format compact: 语句之间小空格</p>
-</li>
-</ul>
-<h3 id="（2）运算符"><a href="#（2）运算符" class="headerlink" title="（2）运算符"></a>（2）运算符</h3><ul>
-<li><p><code> +</code>   加法</p>
-</li>
-<li><p><code>-</code>  减法</p>
-</li>
-<li><p><code>*</code> 乘法</p>
-</li>
-<li><p><code>/</code> 除法（除以：10&#x2F;5&#x3D;2）</p>
-</li>
-<li><p><code>\</code> 除法（去除：5\10&#x3D;2）</p>
-</li>
-<li><p><code>^</code> 幂运算</p>
+<li>
+<p>format compact: 语句之间小空格</p>
 </li>
 </ul>
-<h3 id="（3）常见基础内置函数"><a href="#（3）常见基础内置函数" class="headerlink" title="（3）常见基础内置函数"></a>（3）常见基础内置函数</h3><ul>
-<li><p>abs 函数：绝对值</p>
+<h3 id="（2）运算符">（2）运算符</h3>
+<ul>
+<li>
+<p><code> +</code>   加法</p>
 </li>
-<li><p>三角函数：</p>
+<li>
+<p><code>-</code>  减法</p>
+</li>
+<li>
+<p><code>*</code> 乘法</p>
+</li>
+<li>
+<p><code>/</code> 除法（除以：10/5=2）</p>
+</li>
+<li>
+<p><code>\</code> 除法（去除：5\10=2）</p>
+</li>
+<li>
+<p><code>^</code> 幂运算</p>
+</li>
+</ul>
+<h3 id="（3）常见基础内置函数">（3）常见基础内置函数</h3>
+<ul>
+<li>
+<p>abs 函数：绝对值</p>
+</li>
+<li>
+<p>三角函数：</p>
 <blockquote>
-<p>默认状态下使用弧度：sin(pi&#x2F;6) &#x3D; sind(30)</p>
+<p>默认状态下使用弧度：sin(pi/6) = sind(30)</p>
 </blockquote>
 <ul>
-<li><p>fix 函数</p>
+<li>
+<p>fix 函数</p>
 <blockquote>
-<p>将 X 的每个元素&#x3D;&#x3D;朝零方向&#x3D;&#x3D;四舍五入为最近的整数</p>
+<p>将 X 的每个元素==朝零方向==四舍五入为最近的整数</p>
 </blockquote>
 </li>
 </ul>
 </li>
-<li><p>floor 函数</p>
+<li>
+<p>floor 函数</p>
 <blockquote>
-<p>将 X 的每个元素四舍五入到&#x3D;&#x3D;小于或等于&#x3D;&#x3D;该元素的最接近整数</p>
+<p>将 X 的每个元素四舍五入到==小于或等于==该元素的最接近整数</p>
 </blockquote>
 <ul>
-<li><p>ceil 函数</p>
+<li>
+<p>ceil 函数</p>
 <blockquote>
-<p>将 X 的每个元素四舍五入到&#x3D;&#x3D;大于或等于&#x3D;&#x3D;该元素的最接近整数</p>
+<p>将 X 的每个元素四舍五入到==大于或等于==该元素的最接近整数</p>
 </blockquote>
 </li>
 </ul>
 </li>
-<li><p>round 函数</p>
+<li>
+<p>round 函数</p>
 <blockquote>
 <p>将 X 的每个元素四舍五入为最近的整数</p>
 </blockquote>
 </li>
-<li><p>mod函数 和 rem函数</p>
+<li>
+<p>mod函数 和 rem函数</p>
 <blockquote>
-<p>mod(13,5)&#x3D;3&#x3D;rem(13,5)<br>当x和y的正负号一样的时候，两个函数结果是等同的；当x和y的符号不同时，rem函数结果的符号和x的一样，而mod和y一样。</p>
+<p>mod(13,5)=3=rem(13,5)<br>
+当x和y的正负号一样的时候，两个函数结果是等同的；当x和y的符号不同时，rem函数结果的符号和x的一样，而mod和y一样。</p>
 </blockquote>
 </li>
-<li><p>sign函数：</p>
+<li>
+<p>sign函数：</p>
 <blockquote>
 <p>返回与 x 大小相同的数组 Y，其中 Y 的每个元素是： 1，前提是 x 的对应元素大于 0。 0，前提是 x 的对应元素等于 0。 -1，前提是 x 的对应元素小于 0。</p>
 </blockquote>
 </li>
-<li><p>sqrt函数： </p>
+<li>
+<p>sqrt函数：</p>
 <blockquote>
 <p>计算平方根</p>
 </blockquote>
 </li>
-<li><p>nthroot 函数</p>
+<li>
+<p>nthroot 函数</p>
 <blockquote>
-<p>用来求n次方根： nthroot （64，3）&#x3D;4</p>
+<p>用来求n次方根： nthroot （64，3）=4</p>
 </blockquote>
 </li>
-<li><p>log函数</p>
+<li>
+<p>log函数</p>
 <blockquote>
-<p>log(x)返回自然对数<br>log2(x)返回以2为底的对数</p>
+<p>log(x)返回自然对数<br>
+log2(x)返回以2为底的对数</p>
 </blockquote>
 </li>
-<li><p>exp函数</p>
+<li>
+<p>exp函数</p>
 <blockquote>
 <p>exp(n)，返回常数e^n</p>
 </blockquote>
-<p>注意：10e2 &#x3D; 10 *10^2 &#x3D;1000</p>
+<p>注意：10e2 = 10 *10^2 =1000</p>
 <ul>
-<li><p>rand函数</p>
+<li>
+<p>rand函数</p>
 <blockquote>
-<p>生成（0,1）区间上均匀分布的随机变量。基本语法：<br>rand([M,N,P …])——生成排列成M<em>N</em>P… 多维向量的随机数。如果只写M，则生成M*M矩阵；<br>如果参数为[M,N]可以省略掉方括号。</p>
+<p>生成（0,1）区间上均匀分布的随机变量。基本语法：<br>
+rand([M,N,P …])——生成排列成M<em>N</em>P… 多维向量的随机数。如果只写M，则生成M*M矩阵；<br>
+如果参数为[M,N]可以省略掉方括号。</p>
 </blockquote>
 </li>
 </ul>
 </li>
-<li><p>randi函数</p>
+<li>
+<p>randi函数</p>
 <blockquote>
-<p>randi(N) 是生成(0,N]间均匀分布的伪随机数，并且数都是整数，所以每个数是位于1到N之间。它的表达形式有以下几种：<br>R &#x3D; randi(iMax)            % 生成1：iMax之间的均匀分布随机数<br>R &#x3D; randi(iMax,m,n)        % 生成m×n的1：iMax之间的均匀分布随机数<br>R &#x3D; randi([iMin,iMax],m,n) % 生成m×n的iMin:iMax之间的均匀分布随机数</p>
+<p>randi(N) 是生成(0,N]间均匀分布的伪随机数，并且数都是整数，所以每个数是位于1到N之间。它的表达形式有以下几种：<br>
+R = randi(iMax)            % 生成1：iMax之间的均匀分布随机数<br>
+R = randi(iMax,m,n)        % 生成m×n的1：iMax之间的均匀分布随机数<br>
+R = randi([iMin,iMax],m,n) % 生成m×n的iMin:iMax之间的均匀分布随机数</p>
 </blockquote>
 </li>
-<li><p>randn函数</p>
+<li>
+<p>randn函数</p>
 <blockquote>
-<p>它生成的随机数整体概率为正态分布，均值为0，方差为1<br>R &#x3D; randn(N)   % 生成N×N个正态分布的随机数<br>R &#x3D; randn(M,N) % 生成M×N个正态分布的随机数</p>
+<p>它生成的随机数整体概率为正态分布，均值为0，方差为1<br>
+R = randn(N)   % 生成N×N个正态分布的随机数<br>
+R = randn(M,N) % 生成M×N个正态分布的随机数</p>
 </blockquote>
-<p>  若需产生指定标准差和方法的随机矩阵，则可将randn产生的结果乘以标准差，然后加上期望均值即可。例如，产生均值为0.6，方差为0.1的一个5*5的随机数方式如下：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>x = .6 + sqrt(0.1) * randn(5)</code></p>
+<p>若需产生指定标准差和方法的随机矩阵，则可将randn产生的结果乘以标准差，然后加上期望均值即可。例如，产生均值为0.6，方差为0.1的一个5*5的随机数方式如下：<br>
+                 <code>x = .6 + sqrt(0.1) * randn(5)</code></p>
 </li>
-<li><p>normrnd函数</p>
+<li>
+<p>normrnd函数</p>
 <blockquote>
 <p>正态分布函数：<code>X = normrnd(mu,sigma,m,n)</code> 返回期望为mu，标准差为sigma的m * n的随机矩阵</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="4-关系表达式"><a href="#4-关系表达式" class="headerlink" title="4.关系表达式"></a>4.关系表达式</h2><table>
+<h2 id="4-关系表达式">4.关系表达式</h2>
+<table>
 <thead>
 <tr>
 <th>运算符</th>
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>&gt;</td>
 <td>大于</td>
 </tr>
@@ -426,19 +480,19 @@
 <td>小于</td>
 </tr>
 <tr>
-<td>&gt;&#x3D;</td>
+<td>&gt;=</td>
 <td>大于或等于</td>
 </tr>
 <tr>
-<td>&lt;&#x3D;</td>
+<td>&lt;=</td>
 <td>小于或等于</td>
 </tr>
 <tr>
-<td>&#x3D;&#x3D;</td>
+<td>==</td>
 <td>等于</td>
 </tr>
 <tr>
-<td>~&#x3D;</td>
+<td>~=</td>
 <td>不等于</td>
 </tr>
 <tr>
@@ -465,7 +519,8 @@
 <td>any</td>
 <td>当向量中存在非零元素时为真</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
                 
               </div>
@@ -618,6 +673,11 @@
 
 
   
+
+
+  
+  
+
 
 
 

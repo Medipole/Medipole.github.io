@@ -55,6 +55,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -232,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.1k 字
         
       </span>
     
@@ -286,185 +288,287 @@
               <div class="markdown-body">
                 
                 <p>@<a href="Matlab%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97">TOC</a></p>
-<h1 id="一、矩阵运算"><a href="#一、矩阵运算" class="headerlink" title="一、矩阵运算"></a>一、矩阵运算</h1><h2 id="1-矩阵的加减法"><a href="#1-矩阵的加减法" class="headerlink" title="(1)矩阵的加减法"></a>(1)矩阵的加减法</h2><p>矩阵与标量的加减等于矩阵中所有元素与此标量的加减.</p>
+<h1>一、矩阵运算</h1>
+<h2 id="1-矩阵的加减法">(1)矩阵的加减法</h2>
+<p>矩阵与标量的加减等于矩阵中所有元素与此标量的加减.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; c+<span class="hljs-number">2</span><br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br>     <span class="hljs-number">6</span>     <span class="hljs-number">7</span>     <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="2-矩阵的乘法"><a href="#2-矩阵的乘法" class="headerlink" title="(2)矩阵的乘法"></a>(2)矩阵的乘法</h2><h3 id="①正常乘（-）"><a href="#①正常乘（-）" class="headerlink" title="①正常乘（*）"></a>①正常乘（*）</h3><p>C &#x3D; A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/1.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="②数乘（-）"><a href="#②数乘（-）" class="headerlink" title="②数乘（*）"></a>②数乘（*）</h3><p>用这个常数去乘矩阵的每一个元素</p>
+<h2 id="2-矩阵的乘法">(2)矩阵的乘法</h2>
+<h3 id="①正常乘（-）">①正常乘（*）</h3>
+<p>C = A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br>
+<img src="1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="②数乘（-）">②数乘（*）</h3>
+<p>用这个常数去乘矩阵的每一个元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; <span class="hljs-number">3</span>*c<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="③点乘（-）"><a href="#③点乘（-）" class="headerlink" title="③点乘（.*）"></a>③点乘（.*）</h3><p>要求两个矩阵有相同的维数，对应元素相乘</p>
+<h3 id="③点乘（-）">③点乘（.*）</h3>
+<p>要求两个矩阵有相同的维数，对应元素相乘</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">d =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br>&gt;&gt; c<br>c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; x=d.*c<br>x =<br>     <span class="hljs-number">3</span>    <span class="hljs-number">12</span>    <span class="hljs-number">27</span><br>    <span class="hljs-number">48</span>    <span class="hljs-number">75</span>   <span class="hljs-number">108</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="④标量积（dot）"><a href="#④标量积（dot）" class="headerlink" title="④标量积（dot）"></a>④标量积（dot）</h3><p>返回 A 和 B 的标量点积（内积）<br>&#x3D;&#x3D;语法&#x3D;&#x3D;：</p>
+<h3 id="④标量积（dot）">④标量积（dot）</h3>
+<p>返回 A 和 B 的标量点积（内积）<br>
+==语法==：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">C = dot(A,B)<br>C = dot(A,B,dim)<br></code></pre></td></tr></table></figure>
-
-<p> <code>dim</code>：按指定维数dim求两矩阵的标量积<br>沿其运算的维度，指定为正整数标量。如果未指定值，则默认值是大小不等于 1 的第一个数组维度。</p>
+<p><code>dim</code>：按指定维数dim求两矩阵的标量积<br>
+沿其运算的维度，指定为正整数标量。如果未指定值，则默认值是大小不等于 1 的第一个数组维度。</p>
 <p>考虑两个二维输入数组：A 和 B：</p>
 <p><code>dot(A,B,1)</code> 将 A 和 B 的列视为向量，并返回对应列的点积。</p>
-<p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/2.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br>
+<img src="2.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>如果 <code>dim</code> 大于 <code>ndims(A)</code>，则 <code>dot</code> 返回 <code>conj(A).*B</code>。</p>
-<h3 id="⑤向量积（cross）"><a href="#⑤向量积（cross）" class="headerlink" title="⑤向量积（cross）"></a>⑤向量积（cross）</h3><p>返回 A 和 B 的叉积<br><strong>cross(A,B)<br>cross(A,B,dim)</strong></p>
-<h3 id="⑥混合积"><a href="#⑥混合积" class="headerlink" title="⑥混合积"></a>⑥混合积</h3><p><strong>dot(A,cross(B,C))</strong></p>
-<h3 id="⑦卷积（conv）"><a href="#⑦卷积（conv）" class="headerlink" title="⑦卷积（conv）"></a>⑦卷积（conv）</h3><p><strong>conv(A,B)</strong></p>
-<h3 id="⑧解卷积"><a href="#⑧解卷积" class="headerlink" title="⑧解卷积"></a>⑧解卷积</h3><p><strong>[q,r]&#x3D;deconv(B,A)</strong></p>
-<h3 id="⑨张量积（kron）"><a href="#⑨张量积（kron）" class="headerlink" title="⑨张量积（kron）"></a>⑨张量积（kron）</h3><p><strong>kron(A,B)</strong><br>&emsp;</p>
-<h2 id="3-矩阵的除法"><a href="#3-矩阵的除法" class="headerlink" title="(3)矩阵的除法"></a>(3)矩阵的除法</h2><pre><code class="hljs">通过矩阵的除法可以求解线性方程组的解
+<h3 id="⑤向量积（cross）">⑤向量积（cross）</h3>
+<p>返回 A 和 B 的叉积<br>
+<strong>cross(A,B)<br>
+cross(A,B,dim)</strong></p>
+<h3 id="⑥混合积">⑥混合积</h3>
+<p><strong>dot(A,cross(B,C))</strong></p>
+<h3 id="⑦卷积（conv）">⑦卷积（conv）</h3>
+<p><strong>conv(A,B)</strong></p>
+<h3 id="⑧解卷积">⑧解卷积</h3>
+<p><strong>[q,r]=deconv(B,A)</strong></p>
+<h3 id="⑨张量积（kron）">⑨张量积（kron）</h3>
+<p><strong>kron(A,B)</strong><br>
+ </p>
+<h2 id="3-矩阵的除法">(3)矩阵的除法</h2>
+<pre><code class="hljs">通过矩阵的除法可以求解线性方程组的解
 </code></pre>
-<h3 id="①左除（-）"><a href="#①左除（-）" class="headerlink" title="①左除（ \ ）"></a>①左除（ \ ）</h3><p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>AX</strong>&#x3D;<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>A \ B</strong>是方程组<strong>AX</strong>&#x3D;<strong>B</strong>的解</p>
-<h3 id="②右除"><a href="#②右除" class="headerlink" title="②右除"></a>②右除</h3><p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>XA</strong>&#x3D;<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>B \ A</strong>是方程组<strong>XA</strong>&#x3D;<strong>B</strong>*的解</p>
-<h3 id="③元素左除"><a href="#③元素左除" class="headerlink" title="③元素左除"></a>③元素左除</h3><p> <strong>A .\ B</strong> 是指<strong>B</strong>的个元素除以A的对应元素</p>
-<h3 id="④元素右除"><a href="#④元素右除" class="headerlink" title="④元素右除"></a>④元素右除</h3><p> <strong>A .&#x2F; B</strong> 是指<strong>A</strong>的个元素除以<strong>B</strong>的对应元素</p>
-<h2 id="4-矩阵的乘方"><a href="#4-矩阵的乘方" class="headerlink" title="(4)矩阵的乘方"></a>(4)矩阵的乘方</h2><ul>
-<li>矩阵的乘法:<br>调用格式：<code>A^n</code>,<code>n</code>为整数，<code>A</code>是方阵，计算矩阵<code>A</code>的<code>n</code>次方</li>
+<h3 id="①左除（-）">①左除（ \ ）</h3>
+<p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>AX</strong>=<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>A \ B</strong>是方程组<strong>AX</strong>=<strong>B</strong>的解</p>
+<h3 id="②右除">②右除</h3>
+<p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>XA</strong>=<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>B \ A</strong>是方程组<strong>XA</strong>=<strong>B</strong>*的解</p>
+<h3 id="③元素左除">③元素左除</h3>
+<p><strong>A .\ B</strong> 是指<strong>B</strong>的个元素除以A的对应元素</p>
+<h3 id="④元素右除">④元素右除</h3>
+<p><strong>A ./ B</strong> 是指<strong>A</strong>的个元素除以<strong>B</strong>的对应元素</p>
+<h2 id="4-矩阵的乘方">(4)矩阵的乘方</h2>
+<ul>
+<li>矩阵的乘法:<br>
+调用格式：<code>A^n</code>,<code>n</code>为整数，<code>A</code>是方阵，计算矩阵<code>A</code>的<code>n</code>次方</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">若n&gt;<span class="hljs-number">0</span>，则计算A自乘n次<br>若n=<span class="hljs-number">0</span>，则计算结果为与A同阶的单位阵<br>若n&lt;<span class="hljs-number">0</span>，则计算A的逆矩阵自乘n次<br></code></pre></td></tr></table></figure>
-
-<p> &emsp;&emsp;若<code>n</code>为非整数，<code>A</code>为方阵<br>$$<br>A&#x3D;p\ \lambda^{t}p^{-1}<br>$$</p>
-<p> &emsp;其中 lambda为A的特征对角矩阵，p为A的特征向量矩阵</p>
+<p>  若<code>n</code>为非整数，<code>A</code>为方阵</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mi>p</mi><mtext> </mtext><msup><mi>λ</mi><mi>t</mi></msup><msup><mi>p</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A=p\ \lambda^{t}p^{-1}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0585em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal">λ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8436em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p> 其中 lambda为A的特征对角矩阵，p为A的特征向量矩阵</p>
 <ul>
-<li><p>矩阵元素的乘方<br>调用格式：<code>A.^b</code>,<code>b</code>可为非整数，<code>A</code>为方阵，计算<code>A</code>中每一个元素的<code>b</code>次方组成的矩阵。</p>
+<li>
+<p>矩阵元素的乘方<br>
+调用格式：<code>A.^b</code>,<code>b</code>可为非整数，<code>A</code>为方阵，计算<code>A</code>中每一个元素的<code>b</code>次方组成的矩阵。</p>
 </li>
-<li><p>数的矩阵元素的乘方<br>调用格式：<code>b.^A</code>, <code>b</code>为非整数，<code>A</code>为方阵，计算常数b的A的每一个元素次方排成的矩阵</p>
+<li>
+<p>数的矩阵元素的乘方<br>
+调用格式：<code>b.^A</code>, <code>b</code>为非整数，<code>A</code>为方阵，计算常数b的A的每一个元素次方排成的矩阵</p>
 </li>
-<li><p>数的矩阵乘方:<br>调用格式： <code>b.^A </code>,<code>b</code>为非整数，<code>A</code>为方阵</p>
-<p>$$<br>A&#x3D;p\ b^{\lambda}p^{-1}<br>$$</p>
+<li>
+<p>数的矩阵乘方:<br>
+调用格式： <code>b.^A </code>,<code>b</code>为非整数，<code>A</code>为方阵</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mi>p</mi><mtext> </mtext><msup><mi>b</mi><mi>λ</mi></msup><msup><mi>p</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A=p\ b^{\lambda}p^{-1}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0935em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace"> </span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p>其中 lambda为A的特征对角矩阵，p为A的特征向量矩阵</p>
 </li>
 </ul>
-<h2 id="5-矩阵的操作与变换"><a href="#5-矩阵的操作与变换" class="headerlink" title="(5)矩阵的操作与变换"></a>(5)矩阵的操作与变换</h2><p>  <img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/3.png" srcset="/img/loading.gif" lazyload></p>
-<p>  <code>inv(A)</code>:计算非奇异矩阵的逆矩阵<br>  <code>det(A)</code>:计算方阵的行列式<br>  <code>rank(A)</code>:计算方阵的秩<br>  <code>trace(A)</code>:计算方阵的迹<br>  <code>eig(A)</code>:计算n阶方阵A的特征值<br>  <code>circshift(A,[m,n])</code>:对A矩阵进行m行，n列的圆周移位</p>
-<h1 id="二、多项式运算"><a href="#二、多项式运算" class="headerlink" title="二、多项式运算"></a>二、多项式运算</h1><h2 id="（1）多项式的系数与根"><a href="#（1）多项式的系数与根" class="headerlink" title="（1）多项式的系数与根"></a>（1）多项式的系数与根</h2><h3 id="①-poly2sym"><a href="#①-poly2sym" class="headerlink" title="① poly2sym"></a>① poly2sym</h3><p>由多项式的系数得到多项式的表达式</p>
+<h2 id="5-矩阵的操作与变换">(5)矩阵的操作与变换</h2>
+<p><img src="3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><code>inv(A)</code>:计算非奇异矩阵的逆矩阵<br>
+<code>det(A)</code>:计算方阵的行列式<br>
+<code>rank(A)</code>:计算方阵的秩<br>
+<code>trace(A)</code>:计算方阵的迹<br>
+<code>eig(A)</code>:计算n阶方阵A的特征值<br>
+<code>circshift(A,[m,n])</code>:对A矩阵进行m行，n列的圆周移位</p>
+<h1>二、多项式运算</h1>
+<h2 id="（1）多项式的系数与根">（1）多项式的系数与根</h2>
+<h3 id="①-poly2sym">① poly2sym</h3>
+<p>由多项式的系数得到多项式的表达式</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; p=[<span class="hljs-number">1</span> <span class="hljs-number">0</span> -<span class="hljs-number">5</span> <span class="hljs-number">7</span> -<span class="hljs-number">14</span> <span class="hljs-number">47</span>]<br>p =<br> <span class="hljs-number">1</span>     <span class="hljs-number">0</span>    -<span class="hljs-number">5</span>     <span class="hljs-number">7</span>   -<span class="hljs-number">14</span>    <span class="hljs-number">47</span><br>&gt;&gt; poly2sym(p)<br>ans =<br>x^<span class="hljs-number">5</span> - <span class="hljs-number">5</span>*x^<span class="hljs-number">3</span> + <span class="hljs-number">7</span>*x^<span class="hljs-number">2</span> - <span class="hljs-number">14</span>*x + <span class="hljs-number">47</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="②poly（r）"><a href="#②poly（r）" class="headerlink" title="②poly（r）"></a>②poly（r）</h3><p>  由此 MATLAB 函数（其中 r 是向量）返回多项式的系数，其中多项式的根是 r 的元素</p>
-<h3 id="③fzero-‘fun’-x0"><a href="#③fzero-‘fun’-x0" class="headerlink" title="③fzero(‘fun’,x0):"></a>③fzero(‘fun’,x0):</h3><p>计算由函数fun&#x3D;0决定的方程的根。<br>x0为常数时，计算x0附近的根；<br>如果x0为区间，计算区间内的根，若此区间无根，则输出错误信息。</p>
+<h3 id="②poly（r）">②poly（r）</h3>
+<p>由此 MATLAB 函数（其中 r 是向量）返回多项式的系数，其中多项式的根是 r 的元素</p>
+<h3 id="③fzero-‘fun’-x0">③fzero(‘fun’,x0):</h3>
+<p>计算由函数fun=0决定的方程的根。<br>
+x0为常数时，计算x0附近的根；<br>
+如果x0为区间，计算区间内的根，若此区间无根，则输出错误信息。</p>
 <pre><code class="hljs">求余弦函数在 1 和 2 之间的零点。
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">fun = @cos; % function<br>x0 = [<span class="hljs-number">1</span> <span class="hljs-number">2</span>]; % initial interval<br>x = fzero(fun,x0)<br>x = <span class="hljs-number">1.5708</span><br></code></pre></td></tr></table></figure>
-
 <p>请注意，cos(1) 和 cos(2) 的符号不同。</p>
-<h3 id="④roots-p"><a href="#④roots-p" class="headerlink" title="④roots( p )"></a>④roots( p )</h3><p>计算多项式<code>p(X)=0</code>的解，结果可以为复数</p>
-<p>&emsp;<br>&emsp;</p>
-<h2 id="（2）多项式的值"><a href="#（2）多项式的值" class="headerlink" title="（2）多项式的值"></a>（2）多项式的值</h2><h3 id="①polyval-p-x"><a href="#①polyval-p-x" class="headerlink" title="①polyval(p,x)"></a>①polyval(p,x)</h3><p>计算多项式 p 在 x 的每个点处的值。</p>
-<h3 id="②-y-delta-polyval-p-x-s"><a href="#②-y-delta-polyval-p-x-s" class="headerlink" title="②[y,delta]&#x3D;polyval(p,x,s)"></a>②[y,delta]&#x3D;polyval(p,x,s)</h3><p>同①，<code>y</code>是多项式的值，<code>delta</code>是根据<code>polyfit</code>命令给出的矩阵<code>s</code>的误差估计向量</p>
-<h3 id="③polyvalm-p-A"><a href="#③polyvalm-p-A" class="headerlink" title="③polyvalm(p,A)"></a>③polyvalm(p,A)</h3><p>以矩阵方式返回多项式 p 的计算值，是计算：<br>$$<br>P(A)&#x3D;a_0A^n+a_1A^{n-1}+a_2A^{n-2}+……+a_nI<br>$$</p>
-<p>&emsp;</p>
-<h2 id="（3）多项式的拟合与插值"><a href="#（3）多项式的拟合与插值" class="headerlink" title="（3）多项式的拟合与插值"></a>（3）多项式的拟合与插值</h2><h3 id="①ployfit"><a href="#①ployfit" class="headerlink" title="①ployfit"></a>①ployfit</h3><p>此 MATLAB 函数 返回次数为 <code>n</code> 的多项式 p(x) 的系数，该阶数是 y 中数据的最佳拟合（基于最小二乘指标）。<br>    p 中的系数按降幂排列，p 的长度为 n+1<br>    语法：<code>p = polyfit(x,y,n)</code></p>
+<h3 id="④roots-p">④roots( p )</h3>
+<p>计算多项式<code>p(X)=0</code>的解，结果可以为复数</p>
+<p> <br>
+ </p>
+<h2 id="（2）多项式的值">（2）多项式的值</h2>
+<h3 id="①polyval-p-x">①polyval(p,x)</h3>
+<p>计算多项式 p 在 x 的每个点处的值。</p>
+<h3 id="②-y-delta-polyval-p-x-s">②[y,delta]=polyval(p,x,s)</h3>
+<p>同①，<code>y</code>是多项式的值，<code>delta</code>是根据<code>polyfit</code>命令给出的矩阵<code>s</code>的误差估计向量</p>
+<h3 id="③polyvalm-p-A">③polyvalm(p,A)</h3>
+<p>以矩阵方式返回多项式 p 的计算值，是计算：</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><msup><mi>A</mi><mi>n</mi></msup><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><msup><mi>A</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msup><mi>A</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><mo>…</mo><mo>…</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><mi>I</mi></mrow><annotation encoding="application/x-tex">P(A)=a_0A^n+a_1A^{n-1}+a_2A^{n-2}+……+a_nI
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8644em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0141em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0141em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">……</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span></p>
+<p> </p>
+<h2 id="（3）多项式的拟合与插值">（3）多项式的拟合与插值</h2>
+<h3 id="①ployfit">①ployfit</h3>
+<p>此 MATLAB 函数 返回次数为 <code>n</code> 的多项式 p(x) 的系数，该阶数是 y 中数据的最佳拟合（基于最小二乘指标）。<br>
+p 中的系数按降幂排列，p 的长度为 n+1<br>
+语法：<code>p = polyfit(x,y,n)</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">x = <span class="hljs-number">1</span>:<span class="hljs-number">50</span>; <br>y = -<span class="hljs-number">0.3</span>*x + <span class="hljs-number">2</span>*randn(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>); <br>p = polyfit(x,y,<span class="hljs-number">1</span>);% 进行线性回归<br>poly2sym(p)<br></code></pre></td></tr></table></figure>
-
 <p>输出：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">ans =<br><br><span class="hljs-number">8881560245387251</span>/<span class="hljs-number">18014398509481984</span> - (<span class="hljs-number">5883261650978903</span>*x)/<span class="hljs-number">18014398509481984</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="②interp1-x-y-xi-’method’"><a href="#②interp1-x-y-xi-’method’" class="headerlink" title="②interp1(x,y,xi,’method’)"></a>②interp1(x,y,xi,’method’)</h3><p>数据插值是通过已知的有限个数据点，推导出数据点之间未知位置上的数值。<br><code>vq = interp1(x,v,xq,method)</code> 指定备选插值方法：<code>&#39;linear&#39;、&#39;nearest&#39;、&#39;next&#39;、&#39;previous&#39;、&#39;pchip&#39;、&#39;cubic&#39;、&#39;v5cubic&#39;、&#39;makima&#39; 或 &#39;spline&#39;</code>。默认方法为 ‘linear’。</p>
+<h3 id="②interp1-x-y-xi-‘method’">②interp1(x,y,xi,‘method’)</h3>
+<p>数据插值是通过已知的有限个数据点，推导出数据点之间未知位置上的数值。<br>
+<code>vq = interp1(x,v,xq,method)</code> 指定备选插值方法：<code>'linear'、'nearest'、'next'、'previous'、'pchip'、'cubic'、'v5cubic'、'makima' 或 'spline'</code>。默认方法为 ‘linear’。</p>
 <p>示例:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">x = <span class="hljs-number">0</span>:pi/<span class="hljs-number">4</span>:<span class="hljs-number">2</span>*pi; <br>v = sin(x);<br>xq = <span class="hljs-number">0</span>:pi/<span class="hljs-number">16</span>:<span class="hljs-number">2</span>*pi;<br>vq1 = interp1(x,v,xq);<br>plot(x,v,<span class="hljs-string">&#x27;o&#x27;</span>,xq,vq1,<span class="hljs-string">&#x27;:.&#x27;</span>);<br></code></pre></td></tr></table></figure>
-
-<p>输出<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/4.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/5.png" srcset="/img/loading.gif" lazyload></p>
-<p><code>vq = interp1(x,v,xq,method,extrapolation)</code> 用于指定外插策略，来计算落在 x 域范围外的点。如果希望使用 method 算法进行外插，可将 extrapolation 设置为 <code>&#39;extrap&#39;</code>。您也可以指定一个标量值，这种情况下，interp1 将为所有落在 x 域范围外的点返回该标量值。</p>
-<p>&emsp;<br>&emsp;</p>
-<h2 id="（4-多项式的运算"><a href="#（4-多项式的运算" class="headerlink" title="（4)多项式的运算"></a>（4)多项式的运算</h2><h3 id="①conv-A-B"><a href="#①conv-A-B" class="headerlink" title="①conv(A,B)"></a>①conv(A,B)</h3><p>计算多项式<code>A</code>与<code>B</code>的乘积，仍以向量形式输出</p>
-<h3 id="②-q-r-deconv-A-B"><a href="#②-q-r-deconv-A-B" class="headerlink" title="②[q,r]&#x3D;deconv(A,B)"></a>②[q,r]&#x3D;deconv(A,B)</h3><p>计算多项式<code>A</code>与<code>B</code>的商，<code>q</code>为多项式的系数向量，<code>r</code>为<code>A</code>、<code>B</code>相除后的残值多项式系数向量</p>
-<h3 id="③polyder-A"><a href="#③polyder-A" class="headerlink" title="③polyder(A)"></a>③polyder(A)</h3><p>计算多项式<code>A</code>的导数<br> polyder(A,B)：计算多项式A与B乘积的导数<br> [q,r]&#x3D;polyder(A,B)：计算多项式A与B的商的导数，其中，q为导数分子多项式的系数向量，r为导数分母多项式的系数向量</p>
-<h3 id="④ployint-A-k"><a href="#④ployint-A-k" class="headerlink" title="④ployint(A,k)"></a>④ployint(A,k)</h3><p>计算多项式A的积分，参数k为积分常数，省略时积分常数为零。</p>
+<p>输出<br>
+<img src="4.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<img src="5.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><code>vq = interp1(x,v,xq,method,extrapolation)</code> 用于指定外插策略，来计算落在 x 域范围外的点。如果希望使用 method 算法进行外插，可将 extrapolation 设置为 <code>'extrap'</code>。您也可以指定一个标量值，这种情况下，interp1 将为所有落在 x 域范围外的点返回该标量值。</p>
+<p> <br>
+ </p>
+<h2 id="（4-多项式的运算">（4)多项式的运算</h2>
+<h3 id="①conv-A-B">①conv(A,B)</h3>
+<p>计算多项式<code>A</code>与<code>B</code>的乘积，仍以向量形式输出</p>
+<h3 id="②-q-r-deconv-A-B">②[q,r]=deconv(A,B)</h3>
+<p>计算多项式<code>A</code>与<code>B</code>的商，<code>q</code>为多项式的系数向量，<code>r</code>为<code>A</code>、<code>B</code>相除后的残值多项式系数向量</p>
+<h3 id="③polyder-A">③polyder(A)</h3>
+<p>计算多项式<code>A</code>的导数<br>
+polyder(A,B)：计算多项式A与B乘积的导数<br>
+[q,r]=polyder(A,B)：计算多项式A与B的商的导数，其中，q为导数分子多项式的系数向量，r为导数分母多项式的系数向量</p>
+<h3 id="④ployint-A-k">④ployint(A,k)</h3>
+<p>计算多项式A的积分，参数k为积分常数，省略时积分常数为零。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">a =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">1</span><br><br>&gt;&gt; b=poly2sym(a)<br>b =<br>x^<span class="hljs-number">2</span> + <span class="hljs-number">2</span>*x + <span class="hljs-number">1</span><br><br>&gt;&gt; c=poly2sym(polyint(a))<br>c =<br>x^<span class="hljs-number">3</span>/<span class="hljs-number">3</span> + x^<span class="hljs-number">2</span> + x<br></code></pre></td></tr></table></figure>
-
-<h3 id="⑤residue"><a href="#⑤residue" class="headerlink" title="⑤residue"></a>⑤residue</h3><pre><code class="hljs">[r,p,k] = residue(b,a)
+<h3 id="⑤residue">⑤residue</h3>
+<pre><code class="hljs">[r,p,k] = residue(b,a)
 </code></pre>
-<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/6.png" srcset="/img/loading.gif" lazyload><br>定义较为复杂，可在Matlab中查看示例（<code>help residue</code>）</p>
+<p><img src="6.png" srcset="/img/loading.gif" lazyload alt=""><br>
+定义较为复杂，可在Matlab中查看示例（<code>help residue</code>）</p>
 <ul>
-<li>例如：使用 <code>residue</code> 求以下多项式之比 <code>F(s)</code> 的部分分式展开式<br><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/7.png" srcset="/img/loading.gif" lazyload></li>
+<li>例如：使用 <code>residue</code> 求以下多项式之比 <code>F(s)</code> 的部分分式展开式<br>
+<img src="7.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">b = [-<span class="hljs-number">4</span> <span class="hljs-number">8</span>];<br>a = [<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span>];<br>[r,p,k] = residue(b,a)<br></code></pre></td></tr></table></figure>
-
 <p>输出：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">r =<br>   -<span class="hljs-number">12</span><br>     <span class="hljs-number">8</span> <br>p =<br>    -<span class="hljs-number">4</span><br>    -<span class="hljs-number">2</span><br>k =<br>     []<br></code></pre></td></tr></table></figure>
-
-<p><img src="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/8.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="8.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>也可以使用 residue 将部分分式展开转换回多项式系数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">[b,a] = residue(r,p,k)<br></code></pre></td></tr></table></figure>
-
 <p>此处部分分式展开的计算可以与“<code>信号与系统</code>”中求解单位冲激响应联系起来。</p>
-<p>&emsp;<br>&emsp;<br>&emsp;</p>
-<h1 id="三、数理统计"><a href="#三、数理统计" class="headerlink" title="三、数理统计"></a>三、数理统计</h1><h2 id="1-数据的最值与排序"><a href="#1-数据的最值与排序" class="headerlink" title="1.数据的最值与排序"></a>1.数据的最值与排序</h2><h3 id="1-sort-x"><a href="#1-sort-x" class="headerlink" title="(1)sort(x)"></a>(1)sort(x)</h3><p><code>B = sort(A)</code> 按升序对 A 的元素进行排序。</p>
+<p> <br>
+ <br>
+ </p>
+<h1>三、数理统计</h1>
+<h2 id="1-数据的最值与排序">1.数据的最值与排序</h2>
+<h3 id="1-sort-x">(1)sort(x)</h3>
+<p><code>B = sort(A)</code> 按升序对 A 的元素进行排序。</p>
 <ul>
 <li>如果 A 是向量，则 sort(A) 对向量元素进行排序。</li>
 <li>如果 A 是矩阵，则 sort(A) 会将 A 的列视为向量并对每列进行排序。</li>
 <li>如果 A 是多维数组，则 sort(A) 沿大小不等于 1 的第一个数组维度计算，并将这些元素视为向量。</li>
 </ul>
-<p><code>B = sort(A,dim)</code> 返回 A 沿维度 dim 的排序元素。<br>如果 A 是一个矩阵，则 <code>sort(A,2)</code> 对每行中的元素进行排序。</p>
-<p><code>[B,I] = sort(___)</code> 还会为上述任意语法返回一个索引向量的集合。<br>例如，如果 A 是一个向量，则 <code>B = A(I)</code>。</p>
-<p><code>[C,I]=sort(A,&#39;descend&#39;)</code>—— 降序排列<br>&emsp;</p>
-<h3 id="2-sortrows-x-col"><a href="#2-sortrows-x-col" class="headerlink" title="(2)sortrows(x,col)"></a>(2)sortrows(x,col)</h3><p><code>B = sortrows(A)</code> 基于第一列中的元素按升序对矩阵行进行排序。当第一列包含重复的元素时，sortrows 会根据下一列中的值进行排序，并对后续的相等值重复此行为。</p>
-<p><code>B = sortrows(A,column)</code> 基于向量 column 中指定的列对 A 进行排序。例如，sortrows(A,4) 会基于第四列中的元素按升序对 A 的行进行排序。sortrows(A,[4 6]) 首先基于第四列中的元素，然后基于第六列中的元素，对 A 的行进行排序。<br>&emsp;</p>
-<h3 id="3-max"><a href="#3-max" class="headerlink" title="(3)max()"></a>(3)max()</h3><p><code>M = max(A)</code> 返回数组的最大元素，如果元素是复数，则求最大模。</p>
+<p><code>B = sort(A,dim)</code> 返回 A 沿维度 dim 的排序元素。<br>
+如果 A 是一个矩阵，则 <code>sort(A,2)</code> 对每行中的元素进行排序。</p>
+<p><code>[B,I] = sort(___)</code> 还会为上述任意语法返回一个索引向量的集合。<br>
+例如，如果 A 是一个向量，则 <code>B = A(I)</code>。</p>
+<p><code>[C,I]=sort(A,'descend')</code>—— 降序排列<br>
+ </p>
+<h3 id="2-sortrows-x-col">(2)sortrows(x,col)</h3>
+<p><code>B = sortrows(A)</code> 基于第一列中的元素按升序对矩阵行进行排序。当第一列包含重复的元素时，sortrows 会根据下一列中的值进行排序，并对后续的相等值重复此行为。</p>
+<p><code>B = sortrows(A,column)</code> 基于向量 column 中指定的列对 A 进行排序。例如，sortrows(A,4) 会基于第四列中的元素按升序对 A 的行进行排序。sortrows(A,[4 6]) 首先基于第四列中的元素，然后基于第六列中的元素，对 A 的行进行排序。<br>
+ </p>
+<h3 id="3-max">(3)max()</h3>
+<p><code>M = max(A)</code> 返回数组的最大元素，如果元素是复数，则求最大模。</p>
 <ul>
-<li><p>如果 A 是向量，则 max(A) 返回 A 的最大值。</p>
+<li>
+<p>如果 A 是向量，则 max(A) 返回 A 的最大值。</p>
 </li>
-<li><p>如果 A 为矩阵，则 max(A) 是包含 A 的每一列的最大值的行向量。</p>
+<li>
+<p>如果 A 为矩阵，则 max(A) 是包含 A 的每一列的最大值的行向量。</p>
 </li>
-<li><p>如果 A 是多维数组，则 max(A) 沿大小大于 1 的 A 的第一个维度计算，并将这些元素视为向量。此维度中 M 的大小变为 1，而所有其他维度的大小仍与在 A 中相同。如果 A 是第一个维度长度为零的空数组，则 M 是与 A 大小相同的空数组。</p>
+<li>
+<p>如果 A 是多维数组，则 max(A) 沿大小大于 1 的 A 的第一个维度计算，并将这些元素视为向量。此维度中 M 的大小变为 1，而所有其他维度的大小仍与在 A 中相同。如果 A 是第一个维度长度为零的空数组，则 M 是与 A 大小相同的空数组。</p>
 </li>
-<li><p>如果 A 是表或时间表，则 max(A) 返回包含每个变量的最大值的一个单行表。 (自 R2023a 起)</p>
+<li>
+<p>如果 A 是表或时间表，则 max(A) 返回包含每个变量的最大值的一个单行表。 (自 R2023a 起)</p>
 </li>
 </ul>
 <p><code>M = max(A,[],&quot;all&quot;)</code> 查找 A 的所有元素的最大值。</p>
-<p><code>M = max(A,[],dim)</code> 返回维度 dim 上的最大元素。<br>例如，如果 A 为矩阵，则 max(A,[],2) 返回包含每一行的最大值的列向量。</p>
+<p><code>M = max(A,[],dim)</code> 返回维度 dim 上的最大元素。<br>
+例如，如果 A 为矩阵，则 max(A,[],2) 返回包含每一行的最大值的列向量。</p>
 <p><code>[M,ind]=max(A)</code>求矩阵A中每一列中最大值组成的行向量M，并给出最大值的行下标向量。</p>
-<p><code>max(A,B)</code>求矩阵A、B中对应元素最大值组成的矩阵<br>&emsp;</p>
-<h2 id="2-求和、乘积与差分"><a href="#2-求和、乘积与差分" class="headerlink" title="2.求和、乘积与差分"></a>2.求和、乘积与差分</h2><h3 id="1-sum"><a href="#1-sum" class="headerlink" title="(1)sum()"></a>(1)sum()</h3><p><code>S = sum(A)</code> 返回沿大小大于 1 的第一个数组维度计算的元素之和。</p>
+<p><code>max(A,B)</code>求矩阵A、B中对应元素最大值组成的矩阵<br>
+ </p>
+<h2 id="2-求和、乘积与差分">2.求和、乘积与差分</h2>
+<h3 id="1-sum">(1)sum()</h3>
+<p><code>S = sum(A)</code> 返回沿大小大于 1 的第一个数组维度计算的元素之和。</p>
 <ul>
-<li><p>如果 A 是向量，则 sum(A) 返回元素之和。</p>
+<li>
+<p>如果 A 是向量，则 sum(A) 返回元素之和。</p>
 </li>
-<li><p>如果 A 是矩阵，则 sum(A) 将返回包含每列总和的行向量。<br>  <code>S = sum(A,&quot;all&quot;)</code> 返回 A 的所有元素的总和。</p>
+<li>
+<p>如果 A 是矩阵，则 sum(A) 将返回包含每列总和的行向量。<br>
+<code>S = sum(A,&quot;all&quot;)</code> 返回 A 的所有元素的总和。</p>
 </li>
-<li><p>如果 A 是多维数组，则 sum(A) 沿大小大于 1 的第一个数组维度计算，并将这些元素视为向量。此维度中 S 的大小变为 1，而所有其他维度的大小仍与在 A 中相同。</p>
+<li>
+<p>如果 A 是多维数组，则 sum(A) 沿大小大于 1 的第一个数组维度计算，并将这些元素视为向量。此维度中 S 的大小变为 1，而所有其他维度的大小仍与在 A 中相同。</p>
 </li>
-<li><p>如果 A 是表或时间表，则 sum(A) 返回一个包含每个变量总和的单行表。 (自 R2023a 起)</p>
+<li>
+<p>如果 A 是表或时间表，则 sum(A) 返回一个包含每个变量总和的单行表。 (自 R2023a 起)</p>
 </li>
 </ul>
-<h3 id="2-prod"><a href="#2-prod" class="headerlink" title="(2)prod()"></a>(2)prod()</h3><p><code>B = prod(A)</code> 返回 A 的数组元素的乘积。</p>
+<h3 id="2-prod">(2)prod()</h3>
+<p><code>B = prod(A)</code> 返回 A 的数组元素的乘积。</p>
 <ul>
-<li><p>如果 A 是向量，则 prod(A) 返回元素的乘积。</p>
+<li>
+<p>如果 A 是向量，则 prod(A) 返回元素的乘积。</p>
 </li>
-<li><p>如果 A 为非空矩阵，则 prod(A) 将 A 的各列视为向量，并返回一个包含每列乘积的行向量。<br>  <code>B = prod(A,&quot;all&quot;)</code> 返回 A 的所有元素的乘积。</p>
+<li>
+<p>如果 A 为非空矩阵，则 prod(A) 将 A 的各列视为向量，并返回一个包含每列乘积的行向量。<br>
+<code>B = prod(A,&quot;all&quot;)</code> 返回 A 的所有元素的乘积。</p>
 </li>
-<li><p>如果 A 为 0×0 空矩阵，prod(A) 返回 1。</p>
+<li>
+<p>如果 A 为 0×0 空矩阵，prod(A) 返回 1。</p>
 </li>
-<li><p>如果 A 为多维数组，则 prod(A) 沿第一个非单一维度运算并返回乘积数组。此维度中 B 的大小将减少至 1，而所有其他维度的大小仍与在 A 中相同。</p>
+<li>
+<p>如果 A 为多维数组，则 prod(A) 沿第一个非单一维度运算并返回乘积数组。此维度中 B 的大小将减少至 1，而所有其他维度的大小仍与在 A 中相同。</p>
 </li>
-<li><p>如果 A 是表或时间表，则 prod(A) 返回每个变量乘积的单行表。 (自 R2023a 起)</p>
+<li>
+<p>如果 A 是表或时间表，则 prod(A) 返回每个变量乘积的单行表。 (自 R2023a 起)</p>
 </li>
 </ul>
-<h3 id="3-diff"><a href="#3-diff" class="headerlink" title="(3)diff()"></a>(3)diff()</h3><p><code>Y = diff(X)</code> 计算沿大小不等于 1 的第一个数组维度的 X 相邻元素之间的差分：</p>
+<h3 id="3-diff">(3)diff()</h3>
+<p><code>Y = diff(X)</code> 计算沿大小不等于 1 的第一个数组维度的 X 相邻元素之间的差分：</p>
 <ul>
-<li><p>如果 X 是长度为 m 的向量，则 Y &#x3D; diff(X) 返回长度为 m-1 的向量。Y 的元素是 X &#x3D;&#x3D;相邻元素之间的差分&#x3D;&#x3D;。<br><code>Y = [X(2)-X(1) X(3)-X(2) ... X(m)-X(m-1)]</code></p>
+<li>
+<p>如果 X 是长度为 m 的向量，则 Y = diff(X) 返回长度为 m-1 的向量。Y 的元素是 X ==相邻元素之间的差分==。<br>
+<code>Y = [X(2)-X(1) X(3)-X(2) ... X(m)-X(m-1)]</code></p>
 </li>
-<li><p>如果 X 是不为空的非向量 p×m 矩阵，则 Y &#x3D; diff(X) 返回大小为 <code>(p-1)×m</code> 的矩阵，其元素是 X 的&#x3D;&#x3D;行之间的差分&#x3D;&#x3D;。<br><code>Y = [X(2,:)-X(1,:); X(3,:)-X(2,:); ... X(p,:)-X(p-1,:)]</code></p>
+<li>
+<p>如果 X 是不为空的非向量 p×m 矩阵，则 Y = diff(X) 返回大小为 <code>(p-1)×m</code> 的矩阵，其元素是 X 的==行之间的差分==。<br>
+<code>Y = [X(2,:)-X(1,:); X(3,:)-X(2,:); ... X(p,:)-X(p-1,:)]</code></p>
 </li>
-<li><p>如果 X 是 0×0 的空矩阵，则 Y &#x3D; diff(X) 返回 0×0 的空矩阵。</p>
+<li>
+<p>如果 X 是 0×0 的空矩阵，则 Y = diff(X) 返回 0×0 的空矩阵。</p>
 </li>
 </ul>
-<h2 id="3-平均值、中值与标准差"><a href="#3-平均值、中值与标准差" class="headerlink" title="3.平均值、中值与标准差"></a>3.平均值、中值与标准差</h2><ul>
+<h2 id="3-平均值、中值与标准差">3.平均值、中值与标准差</h2>
+<ul>
 <li>mean(x)  —— 计算向量x元素的算数平均数</li>
 <li>median(x) —— 计算向量x元素的中位数</li>
 <li>std(x) —— 计算向量x元素的标准差</li>
 </ul>
 <p>(各类用法与sum等十分相似)</p>
-<h2 id="4-协方差与相关系数"><a href="#4-协方差与相关系数" class="headerlink" title="4.协方差与相关系数"></a>4.协方差与相关系数</h2><ul>
+<h2 id="4-协方差与相关系数">4.协方差与相关系数</h2>
+<ul>
 <li>cov(x) —— 计算向量 x 的协方差</li>
 <li>cov(x,y) —— 计算两个向量x,y的协方差</li>
 <li>cov(A) —— 计算矩阵A的协方差矩阵</li>
 <li>correoef(A) —— 计算矩阵A的相关系数矩阵</li>
 <li>corrcoef (x,y) —— 计算两个向量x,y的相关系数</li>
 </ul>
-<h2 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5.数据处理"></a>5.数据处理</h2><ul>
+<h2 id="5-数据处理">5.数据处理</h2>
+<ul>
 <li>ceil —— 向上取整</li>
 <li>floor —— 向下取整</li>
 <li>fix —— 向零取整</li>
 <li>round —— 四舍五入</li>
 <li>mod(x,y) —— 取余数</li>
-<li>rem(x,y)—— 取余数<br>(当x和y的正负号一样的时候，两个函数结果是等同的；当x和y的符号不同时，<code>rem</code>函数结果的符号和<code>x</code>的一样，而<code>mod</code>和<code>y</code>一样。)</li>
+<li>rem(x,y)—— 取余数<br>
+(当x和y的正负号一样的时候，两个函数结果是等同的；当x和y的符号不同时，<code>rem</code>函数结果的符号和<code>x</code>的一样，而<code>mod</code>和<code>y</code>一样。)</li>
 <li>abs(x) —— 对数据取模</li>
 <li>angle(x) —— 对数据取相位</li>
 <li>phase(x) —— 对数据取相位并解卷绕</li>
@@ -629,6 +733,11 @@
 
 
   
+
+
+  
+  
+
 
 
 

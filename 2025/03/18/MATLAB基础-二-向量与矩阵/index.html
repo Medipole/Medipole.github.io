@@ -49,6 +49,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -281,183 +283,218 @@
                 
                 <p>@<a href="MATLAB%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89%E7%AC%94%E8%AE%B0">TOC</a></p>
 <p>一个矩阵的维数为<code>r x c</code>,其中<code>r</code>为行向量的个数，<code>c</code>是列向量的个数。</p>
-<h2 id="1-行向量与列向量"><a href="#1-行向量与列向量" class="headerlink" title="1.行向量与列向量"></a>1.行向量与列向量</h2><h3 id="1-创建行向量"><a href="#1-创建行向量" class="headerlink" title="(1)创建行向量"></a>(1)创建行向量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; v=[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]<br><br>v =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br><br>&gt;&gt; w=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><br>w =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
-<p>&emsp;</p>
-<h3 id="2-冒号运算符和Linspace函数"><a href="#2-冒号运算符和Linspace函数" class="headerlink" title="(2)冒号运算符和Linspace函数"></a>(2)冒号运算符和Linspace函数</h3><p>若向量中的值有规律，可用冒号运算符循环访问</p>
+<h2 id="1-行向量与列向量">1.行向量与列向量</h2>
+<h3 id="1-创建行向量">(1)创建行向量</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; v=[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]<br><br>v =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br><br>&gt;&gt; w=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><br>w =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+<p> </p>
+<h3 id="2-冒号运算符和Linspace函数">(2)冒号运算符和Linspace函数</h3>
+<p>若向量中的值有规律，可用冒号运算符循环访问</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; v=<span class="hljs-number">1</span>:<span class="hljs-number">9</span><br><br>v =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span>     <span class="hljs-number">7</span>     <span class="hljs-number">8</span>     <span class="hljs-number">9</span><br><br>&gt;&gt; v=<span class="hljs-number">1</span>:<span class="hljs-number">2</span>:<span class="hljs-number">9</span><br><br>v =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">5</span>     <span class="hljs-number">7</span>     <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
-
 <ul>
 <li>其中<code>v=1:2:9</code>中的<code>2</code>为步长</li>
-<li>在此情况下，不需要用 [ ] 来定义向量<br>&emsp;</li>
+<li>在此情况下，不需要用 [ ] 来定义向量<br>
+ </li>
 </ul>
 <p><code>linspace</code>函数创建一个线性间隔的空间，<code>linspace(x,y,n)</code>创建一个从<code>x</code>到<code>y</code>有<code>n</code>个值的向量</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; linspace(<span class="hljs-number">3</span>,<span class="hljs-number">100</span>,<span class="hljs-number">4</span>)<br><br>ans =<br><br>    <span class="hljs-number">3.0000</span>   <span class="hljs-number">35.3333</span>   <span class="hljs-number">67.6667</span>  <span class="hljs-number">100.0000</span><br></code></pre></td></tr></table></figure>
-
-<p>&emsp;</p>
-<p><code>logsapce</code>函数创建一个对数间隔的向量，<code>logspace(x,y,n)</code>创建一个从<code>x^10</code>到<code>y^10</code>有<code>n</code>个值的向量,<br>若n被忽略，则默认为100个点。</p>
-<p>&emsp;</p>
-<h3 id="3-引用与修改元素"><a href="#3-引用与修改元素" class="headerlink" title="(3)引用与修改元素"></a>(3)引用与修改元素</h3><pre><code class="hljs">MATLAB中索引从1开始
+<p> </p>
+<p><code>logsapce</code>函数创建一个对数间隔的向量，<code>logspace(x,y,n)</code>创建一个从<code>x^10</code>到<code>y^10</code>有<code>n</code>个值的向量,<br>
+若n被忽略，则默认为100个点。</p>
+<p> </p>
+<h3 id="3-引用与修改元素">(3)引用与修改元素</h3>
+<pre><code class="hljs">MATLAB中索引从1开始
 </code></pre>
-<p>1&emsp;2&emsp;3&emsp;4&emsp;5&emsp;6&emsp;7&emsp;8&emsp;9&emsp;10</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; v<br><br>v =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">5</span>     <span class="hljs-number">7</span>     <span class="hljs-number">9</span><br><br>&gt;&gt; v(<span class="hljs-number">3</span>)<br><br>ans =<br><br>     <span class="hljs-number">5</span><br><br>&gt;&gt; c=v(<span class="hljs-number">2</span>:<span class="hljs-number">5</span>)<br><br>c =<br><br>     <span class="hljs-number">3</span>     <span class="hljs-number">5</span>     <span class="hljs-number">7</span>     <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
-
 <p>任何向量都可以通过索引送入另一个向量，索引不需要按顺序</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; v([<span class="hljs-number">1</span> <span class="hljs-number">5</span> <span class="hljs-number">3</span>])<br><br>ans =<br><br>     <span class="hljs-number">1</span>     <span class="hljs-number">9</span>     <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-
 <ul>
 <li>向量<code>[1 5 3]</code>被称为索引向量，指定的是原始向量</li>
 <li>通过指定向量中的索引或下标，可以改变向量元素中存储的值：<code>v[4]=10</code></li>
 <li>通过引用一个现状还不存在的向量，可以拓展一个向量</li>
 <li>如果向量的结尾和指定的元素之间还有空，则用<code>0</code>填充</li>
 </ul>
-<h3 id="4-创建列向量"><a href="#4-创建列向量" class="headerlink" title="(4)创建列向量"></a>(4)创建列向量</h3><p>可以通过将值放在方括号中，用分号（  ；）隔开</p>
+<h3 id="4-创建列向量">(4)创建列向量</h3>
+<p>可以通过将值放在方括号中，用分号（  ；）隔开</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; b=[<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>;<span class="hljs-number">4</span>;<span class="hljs-number">5</span>]<br>b =<br>     <span class="hljs-number">1</span><br>     <span class="hljs-number">2</span><br>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span><br>     <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-
-<p>&emsp;<br>没有直接的方法使用冒号运算符得到列向量，但可以通过&#x3D;&#x3D;转置&#x3D;&#x3D;</p>
+<p> <br>
+没有直接的方法使用冒号运算符得到列向量，但可以通过==转置==</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; r=<span class="hljs-number">1</span>:<span class="hljs-number">3</span><br>r =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>&gt;&gt; c=r.<span class="hljs-string">&#x27;</span><br><span class="hljs-string">c =</span><br><span class="hljs-string">     1</span><br><span class="hljs-string">     2</span><br><span class="hljs-string">     3</span><br></code></pre></td></tr></table></figure>
-
 <ul>
-<li><p><code>c&#39;</code>——共轭转置</p>
+<li>
+<p><code>c'</code>——共轭转置</p>
 </li>
-<li><p><code>c.&#39;</code>——转置<br>&emsp;<br>&emsp;</p>
+<li>
+<p><code>c.'</code>——转置<br>
+ <br>
+ </p>
 </li>
 </ul>
-<h2 id="2-矩阵变量"><a href="#2-矩阵变量" class="headerlink" title="2.矩阵变量"></a>2.矩阵变量</h2><h3 id="1-创建矩阵变量"><a href="#1-创建矩阵变量" class="headerlink" title="(1)创建矩阵变量"></a>(1)创建矩阵变量</h3><pre><code class="hljs">行向量的值用空格或逗号隔开，不同的行用分号隔开
+<h2 id="2-矩阵变量">2.矩阵变量</h2>
+<h3 id="1-创建矩阵变量">(1)创建矩阵变量</h3>
+<pre><code class="hljs">行向量的值用空格或逗号隔开，不同的行用分号隔开
 </code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; mat=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br>mat =<br>   <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>   <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
-
 <ul>
-<li><p>每行值的个数必须相等</p>
+<li>
+<p>每行值的个数必须相等</p>
 </li>
-<li><p>行里能使用冒号运算符</p>
+<li>
+<p>行里能使用冒号运算符</p>
 </li>
-<li><p>不同行间也可以使用回车键替代分号</p>
+<li>
+<p>不同行间也可以使用回车键替代分号</p>
 </li>
 </ul>
-<h3 id="2-创建特殊矩阵的函数"><a href="#2-创建特殊矩阵的函数" class="headerlink" title="(2)创建特殊矩阵的函数"></a>(2)创建特殊矩阵的函数</h3><h4 id="①zeros函数"><a href="#①zeros函数" class="headerlink" title="①zeros函数"></a>①zeros函数</h4><p>产生全0矩阵，即零矩阵</p>
+<h3 id="2-创建特殊矩阵的函数">(2)创建特殊矩阵的函数</h3>
+<h4 id="①zeros函数">①zeros函数</h4>
+<p>产生全0矩阵，即零矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; zeros(<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="②ones函数"><a href="#②ones函数" class="headerlink" title="②ones函数"></a>②ones函数</h4><p>产生全1的矩阵，即幺矩阵</p>
+<h4 id="②ones函数">②ones函数</h4>
+<p>产生全1的矩阵，即幺矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; ones(<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="③eye函数"><a href="#③eye函数" class="headerlink" title="③eye函数"></a>③eye函数</h4><p>产生对角线为1的矩阵。当矩阵为方阵时，得到一个单位矩阵</p>
+<h4 id="③eye函数">③eye函数</h4>
+<p>产生对角线为1的矩阵。当矩阵为方阵时，得到一个单位矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; eye(<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="④rand函数"><a href="#④rand函数" class="headerlink" title="④rand函数"></a>④rand函数</h4><p>产生（0,1）区间均匀分布的随机矩阵</p>
+<h4 id="④rand函数">④rand函数</h4>
+<p>产生（0,1）区间均匀分布的随机矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; rand(<span class="hljs-number">3</span>)<br>ans =<br>    <span class="hljs-number">0.8147</span>    <span class="hljs-number">0.9134</span>    <span class="hljs-number">0.2785</span><br>    <span class="hljs-number">0.9058</span>    <span class="hljs-number">0.6324</span>    <span class="hljs-number">0.5469</span><br>    <span class="hljs-number">0.1270</span>    <span class="hljs-number">0.0975</span>    <span class="hljs-number">0.9575</span><br></code></pre></td></tr></table></figure>
-
 <p>也可以传递两个参数明确指定行列数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; rand(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>ans =<br>    <span class="hljs-number">0.9649</span>    <span class="hljs-number">0.9706</span>    <span class="hljs-number">0.4854</span><br>    <span class="hljs-number">0.1576</span>    <span class="hljs-number">0.9572</span>    <span class="hljs-number">0.8003</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="⑤randi函数"><a href="#⑤randi函数" class="headerlink" title="⑤randi函数"></a>⑤randi函数</h4><p>使用<code>randi</code>能够生成随机整数矩阵,并且可以指定范围与生成矩阵的维数</p>
+<h4 id="⑤randi函数">⑤randi函数</h4>
+<p>使用<code>randi</code>能够生成随机整数矩阵,并且可以指定范围与生成矩阵的维数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; randi([<span class="hljs-number">20</span>,<span class="hljs-number">30</span>],<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>ans =<br>    <span class="hljs-number">21</span>    <span class="hljs-number">30</span>    <span class="hljs-number">30</span><br>    <span class="hljs-number">24</span>    <span class="hljs-number">28</span>    <span class="hljs-number">27</span><br>&gt;&gt; randi([<span class="hljs-number">10</span>,<span class="hljs-number">20</span>],<span class="hljs-number">2</span>)<br>ans =<br>    <span class="hljs-number">10</span>    <span class="hljs-number">20</span><br>    <span class="hljs-number">19</span>    <span class="hljs-number">17</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="⑥randn函数"><a href="#⑥randn函数" class="headerlink" title="⑥randn函数"></a>⑥randn函数</h4><p>产生均值为0，方差为1的标准正态分布随机矩阵</p>
+<h4 id="⑥randn函数">⑥randn函数</h4>
+<p>产生均值为0，方差为1的标准正态分布随机矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; randn(<span class="hljs-number">3</span>)<br>ans =<br>   -<span class="hljs-number">0.2414</span>   -<span class="hljs-number">0.8649</span>    <span class="hljs-number">0.6277</span><br>    <span class="hljs-number">0.3192</span>   -<span class="hljs-number">0.0301</span>    <span class="hljs-number">1.0933</span><br>    <span class="hljs-number">0.3129</span>   -<span class="hljs-number">0.1649</span>    <span class="hljs-number">1.1093</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="⑦magic函数"><a href="#⑦magic函数" class="headerlink" title="⑦magic函数"></a>⑦magic函数</h4><p>幻方矩阵：产生行、列、对角线和相等的方阵</p>
+<h4 id="⑦magic函数">⑦magic函数</h4>
+<p>幻方矩阵：产生行、列、对角线和相等的方阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; magic(<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">8</span>     <span class="hljs-number">1</span>     <span class="hljs-number">6</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">5</span>     <span class="hljs-number">7</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">9</span>     <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="⑧diag函数"><a href="#⑧diag函数" class="headerlink" title="⑧diag函数"></a>⑧diag函数</h4><p>取得矩阵的对角线元素，或生成以该向量为对角的矩阵</p>
+<h4 id="⑧diag函数">⑧diag函数</h4>
+<p>取得矩阵的对角线元素，或生成以该向量为对角的矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; magic(<span class="hljs-number">4</span>)<br>ans =<br>    <span class="hljs-number">16</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>    <span class="hljs-number">13</span><br>     <span class="hljs-number">5</span>    <span class="hljs-number">11</span>    <span class="hljs-number">10</span>     <span class="hljs-number">8</span><br>     <span class="hljs-number">9</span>     <span class="hljs-number">7</span>     <span class="hljs-number">6</span>    <span class="hljs-number">12</span><br>     <span class="hljs-number">4</span>    <span class="hljs-number">14</span>    <span class="hljs-number">15</span>     <span class="hljs-number">1</span><br>&gt;&gt; diag(ans)<br>ans =<br>    <span class="hljs-number">16</span><br>    <span class="hljs-number">11</span><br>     <span class="hljs-number">6</span><br>     <span class="hljs-number">1</span><br>&gt;&gt; diag(ans)<br>ans =<br>    <span class="hljs-number">16</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>    <span class="hljs-number">11</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">6</span>     <span class="hljs-number">0</span><br>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">0</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
 <p>通过<code>diag(a,n)</code>中的<code>n</code>也可以控制取得对角线平行线上的元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; diag(magic(<span class="hljs-number">4</span>),<span class="hljs-number">1</span>)<br>ans =<br>     <span class="hljs-number">2</span><br>    <span class="hljs-number">10</span><br>    <span class="hljs-number">12</span><br></code></pre></td></tr></table></figure>
-
-<p>类似的有：<br><code>triu(A)</code>函数，生成上三角矩阵（为A中对应元素），其余元素为0<br><code>tril(A)</code>函数,生成下三角矩阵，其余元素为0</p>
-<h3 id="3-引用与修改矩阵元素"><a href="#3-引用与修改矩阵元素" class="headerlink" title="(3)引用与修改矩阵元素"></a>(3)引用与修改矩阵元素</h3><h4 id="①下标索引"><a href="#①下标索引" class="headerlink" title="①下标索引"></a>①下标索引</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; mat=[<span class="hljs-number">2</span>:<span class="hljs-number">4</span>;<span class="hljs-number">3</span>:<span class="hljs-number">5</span>]<br>mat =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br>&gt;&gt; mat(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">5</span><br>&gt;&gt; mat(<span class="hljs-number">1</span>:<span class="hljs-number">2</span>,<span class="hljs-number">2</span>:<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-
+<p>类似的有：<br>
+<code>triu(A)</code>函数，生成上三角矩阵（为A中对应元素），其余元素为0<br>
+<code>tril(A)</code>函数,生成下三角矩阵，其余元素为0</p>
+<h3 id="3-引用与修改矩阵元素">(3)引用与修改矩阵元素</h3>
+<h4 id="①下标索引">①下标索引</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; mat=[<span class="hljs-number">2</span>:<span class="hljs-number">4</span>;<span class="hljs-number">3</span>:<span class="hljs-number">5</span>]<br>mat =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br>&gt;&gt; mat(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">5</span><br>&gt;&gt; mat(<span class="hljs-number">1</span>:<span class="hljs-number">2</span>,<span class="hljs-number">2</span>:<span class="hljs-number">3</span>)<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>注意创建矩阵时使用方括号 [  ]<br>引用矩阵时使用圆括号()</p>
+<p>注意创建矩阵时使用方括号 [  ]<br>
+引用矩阵时使用圆括号()</p>
 </blockquote>
 <p>利用冒号 <code>:</code>，可以引用矩阵所有的行和列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">mat =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br>&gt;&gt; mat(<span class="hljs-number">1</span>,:)<br>ans =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="②线性索引"><a href="#②线性索引" class="headerlink" title="②线性索引"></a>②线性索引</h4><p>MATLAB在内存中存储矩阵是以列为主的顺序分配的（逐列式的），故线性索引提取元素时是按列进行的。</p>
+<h4 id="②线性索引">②线性索引</h4>
+<p>MATLAB在内存中存储矩阵是以列为主的顺序分配的（逐列式的），故线性索引提取元素时是按列进行的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python">a =<br>   <span class="hljs-number">100</span>    <span class="hljs-number">77</span><br>    <span class="hljs-number">28</span>    <span class="hljs-number">14</span><br><br>&gt;&gt; a(<span class="hljs-number">1</span>)<br>ans =<br>   <span class="hljs-number">100</span><br><br>&gt;&gt; a(<span class="hljs-number">2</span>)<br>ans =<br>    <span class="hljs-number">28</span><br><br>&gt;&gt; a(<span class="hljs-number">3</span>)<br>ans =<br>    <span class="hljs-number">77</span><br><br>&gt;&gt; a(<span class="hljs-number">4</span>)<br>ans =<br>    <span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="③修改"><a href="#③修改" class="headerlink" title="③修改"></a>③修改</h4><p>一个矩阵的任何子集都能修改，只要将要赋给的子集与被修改的子集具有相同数量的行和列即可。</p>
+<h4 id="③修改">③修改</h4>
+<p>一个矩阵的任何子集都能修改，只要将要赋给的子集与被修改的子集具有相同数量的行和列即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; a(<span class="hljs-number">3</span>)=<span class="hljs-number">11</span><br>a =<br>   <span class="hljs-number">100</span>    <span class="hljs-number">11</span><br>    <span class="hljs-number">28</span>    <span class="hljs-number">14</span><br></code></pre></td></tr></table></figure>
-
 <p>也可以改变一个矩阵的整行或整列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; a(<span class="hljs-number">2</span>,:)=[<span class="hljs-number">2</span> <span class="hljs-number">3</span>]<br>a =<br>   <span class="hljs-number">100</span>    <span class="hljs-number">11</span><br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-维数"><a href="#4-维数" class="headerlink" title="(4)维数"></a>(4)维数</h3><h4 id="①length函数"><a href="#①length函数" class="headerlink" title="①length函数"></a>①length函数</h4><p>length函数返回向量中元素的个数</p>
+<h3 id="4-维数">(4)维数</h3>
+<h4 id="①length函数">①length函数</h4>
+<p>length函数返回向量中元素的个数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">b =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>&gt;&gt; length (b)<br>ans =<br>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
 <p>对于一个矩阵，length函数返回行、列向量中较大的那个</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; length(c)<br>ans =<br>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="②size函数"><a href="#②size函数" class="headerlink" title="②size函数"></a>②size函数</h4><p>size函数返回行、列向量的个数</p>
+<h4 id="②size函数">②size函数</h4>
+<p>size函数返回行、列向量的个数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; size(c)<br>ans =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
 <p>也可以用一个向量来接受这两个返回量</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; [m,n]=size(c)<br>m =<br>     <span class="hljs-number">2</span><br>n =<br>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="③numel函数"><a href="#③numel函数" class="headerlink" title="③numel函数"></a>③numel函数</h4><p>返回数组（向量或矩阵）所有元素的个数</p>
+<h4 id="③numel函数">③numel函数</h4>
+<p>返回数组（向量或矩阵）所有元素的个数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; numel(c)<br>ans =<br>     <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
-
 <p>MATLAB还有一个内置表达end,用来提取向量中的最后一个元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; c(<span class="hljs-number">1</span>,end)<br>ans =<br>     <span class="hljs-number">3</span><br>&gt;&gt; c(end)<br>ans =<br>     <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="④reshape函数"><a href="#④reshape函数" class="headerlink" title="④reshape函数"></a>④reshape函数</h4><p>reshape函数可以改变一个矩阵的维数</p>
+<h4 id="④reshape函数">④reshape函数</h4>
+<p>reshape函数可以改变一个矩阵的维数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; magic(<span class="hljs-number">4</span>)<br>ans =<br>    <span class="hljs-number">16</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>    <span class="hljs-number">13</span><br>     <span class="hljs-number">5</span>    <span class="hljs-number">11</span>    <span class="hljs-number">10</span>     <span class="hljs-number">8</span><br>     <span class="hljs-number">9</span>     <span class="hljs-number">7</span>     <span class="hljs-number">6</span>    <span class="hljs-number">12</span><br>     <span class="hljs-number">4</span>    <span class="hljs-number">14</span>    <span class="hljs-number">15</span>     <span class="hljs-number">1</span><br>&gt;&gt; reshape(ans,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>)<br>ans =<br>    <span class="hljs-number">16</span>     <span class="hljs-number">9</span>     <span class="hljs-number">2</span>     <span class="hljs-number">7</span>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>    <span class="hljs-number">13</span>    <span class="hljs-number">12</span><br>     <span class="hljs-number">5</span>     <span class="hljs-number">4</span>    <span class="hljs-number">11</span>    <span class="hljs-number">14</span>    <span class="hljs-number">10</span>    <span class="hljs-number">15</span>     <span class="hljs-number">8</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<p>&emsp;<br>下面介绍几个特殊的&#x3D;&#x3D;改变矩阵维数&#x3D;&#x3D;的函数：<br><code>fliplr</code>函数从左到右“翻转”矩阵；<br><code>flipud</code>函数上下”翻转“矩阵；<br><code>rot90</code>函数逆时针90°旋转矩阵<br><code>repmat</code>用来创建一个矩阵：repmat(mat,m,n)</p>
+<p> <br>
+下面介绍几个特殊的==改变矩阵维数==的函数：<br>
+<code>fliplr</code>函数从左到右“翻转”矩阵；<br>
+<code>flipud</code>函数上下”翻转“矩阵；<br>
+<code>rot90</code>函数逆时针90°旋转矩阵<br>
+<code>repmat</code>用来创建一个矩阵：repmat(mat,m,n)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python">a =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>&gt;&gt; fliplr(a)<br>ans =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">1</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">3</span><br>&gt;&gt; fliplr(ans)<br>ans =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span><br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>&gt;&gt; rot90(ans)<br>ans =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>&gt;&gt; repmat(ans,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)<br>ans =<br>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span>     <span class="hljs-number">2</span>     <span class="hljs-number">4</span><br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="5-空向量"><a href="#5-空向量" class="headerlink" title="(5)空向量"></a>(5)空向量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"> &gt;&gt; evec=[]<br>evec =<br>     []<br>&gt;&gt; length (evec)<br>ans =<br>     <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-
+<h3 id="5-空向量">(5)空向量</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"> &gt;&gt; evec=[]<br>evec =<br>     []<br>&gt;&gt; length (evec)<br>ans =<br>     <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 <p>可以通过连接给空向量添加值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; evec=[evec <span class="hljs-number">4</span>]<br>evec =<br>     <span class="hljs-number">4</span><br>&gt;&gt; evec=[evec <span class="hljs-number">11</span>]<br>evec =<br>     <span class="hljs-number">4</span>    <span class="hljs-number">11</span><br></code></pre></td></tr></table></figure>
-
 <p>空向量可用于删除向量中的元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">b =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>&gt;&gt; b(<span class="hljs-number">2</span>)=[]<br>b =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="3-矩阵的基本运算"><a href="#3-矩阵的基本运算" class="headerlink" title="3.矩阵的基本运算"></a>3.矩阵的基本运算</h2><h3 id="1-矩阵的加减法"><a href="#1-矩阵的加减法" class="headerlink" title="(1)矩阵的加减法"></a>(1)矩阵的加减法</h3><p>矩阵与标量的加减等于矩阵中所有元素与此标量的加减.</p>
+<h2 id="3-矩阵的基本运算">3.矩阵的基本运算</h2>
+<h3 id="1-矩阵的加减法">(1)矩阵的加减法</h3>
+<p>矩阵与标量的加减等于矩阵中所有元素与此标量的加减.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; c+<span class="hljs-number">2</span><br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span><br>     <span class="hljs-number">6</span>     <span class="hljs-number">7</span>     <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-矩阵的乘法"><a href="#2-矩阵的乘法" class="headerlink" title="(2)矩阵的乘法"></a>(2)矩阵的乘法</h3><h4 id="①正常乘（-）"><a href="#①正常乘（-）" class="headerlink" title="①正常乘（*）"></a>①正常乘（*）</h4><p>C &#x3D; A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br><img src="/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/1.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="②数乘（-）"><a href="#②数乘（-）" class="headerlink" title="②数乘（*）"></a>②数乘（*）</h4><p>用这个常数去乘矩阵的每一个元素</p>
+<h3 id="2-矩阵的乘法">(2)矩阵的乘法</h3>
+<h4 id="①正常乘（-）">①正常乘（*）</h4>
+<p>C = A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br>
+<img src="1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="②数乘（-）">②数乘（*）</h4>
+<p>用这个常数去乘矩阵的每一个元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; <span class="hljs-number">3</span>*c<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="③点乘（-）"><a href="#③点乘（-）" class="headerlink" title="③点乘（.*）"></a>③点乘（.*）</h4><p>要求两个矩阵有相同的维数，对应元素相乘</p>
+<h4 id="③点乘（-）">③点乘（.*）</h4>
+<p>要求两个矩阵有相同的维数，对应元素相乘</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python">d =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br>&gt;&gt; c<br>c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; x=d.*c<br>x =<br>     <span class="hljs-number">3</span>    <span class="hljs-number">12</span>    <span class="hljs-number">27</span><br>    <span class="hljs-number">48</span>    <span class="hljs-number">75</span>   <span class="hljs-number">108</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="④标量积（dot）"><a href="#④标量积（dot）" class="headerlink" title="④标量积（dot）"></a>④标量积（dot）</h4><p>返回 A 和 B 的标量点积（内积）<br>&#x3D;&#x3D;语法&#x3D;&#x3D;：</p>
+<h4 id="④标量积（dot）">④标量积（dot）</h4>
+<p>返回 A 和 B 的标量点积（内积）<br>
+==语法==：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">C = dot(A,B)<br>C = dot(A,B,dim)<br></code></pre></td></tr></table></figure>
-
-<p> <code>dim</code>：按指定维数dim求两矩阵的标量积<br>沿其运算的维度，指定为正整数标量。如果未指定值，则默认值是大小不等于 1 的第一个数组维度。</p>
+<p><code>dim</code>：按指定维数dim求两矩阵的标量积<br>
+沿其运算的维度，指定为正整数标量。如果未指定值，则默认值是大小不等于 1 的第一个数组维度。</p>
 <p>考虑两个二维输入数组：A 和 B：</p>
 <p><code>dot(A,B,1)</code> 将 A 和 B 的列视为向量，并返回对应列的点积。</p>
-<p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br><img src="/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/2.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br>
+<img src="2.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>如果 <code>dim</code> 大于 <code>ndims(A)</code>，则 <code>dot</code> 返回 <code>conj(A).*B</code>。</p>
-<h4 id="⑤向量积（cross）"><a href="#⑤向量积（cross）" class="headerlink" title="⑤向量积（cross）"></a>⑤向量积（cross）</h4><p>返回 A 和 B 的叉积<br><strong>cross(A,B)<br>cross(A,B,dim)</strong></p>
-<h4 id="⑥混合积"><a href="#⑥混合积" class="headerlink" title="⑥混合积"></a>⑥混合积</h4><p><strong>dot(A,cross(B,C))</strong></p>
-<h4 id="⑦卷积（conv）"><a href="#⑦卷积（conv）" class="headerlink" title="⑦卷积（conv）"></a>⑦卷积（conv）</h4><p><strong>conv(A,B)</strong></p>
-<h4 id="⑧解卷积"><a href="#⑧解卷积" class="headerlink" title="⑧解卷积"></a>⑧解卷积</h4><p><strong>[q,r]&#x3D;deconv(B,A)</strong></p>
-<h4 id="⑨张量积（kron）"><a href="#⑨张量积（kron）" class="headerlink" title="⑨张量积（kron）"></a>⑨张量积（kron）</h4><p><strong>kron(A,B)</strong><br>&emsp;</p>
-<h3 id="3-矩阵的除法"><a href="#3-矩阵的除法" class="headerlink" title="(3)矩阵的除法"></a>(3)矩阵的除法</h3><h4 id="①左除（-）"><a href="#①左除（-）" class="headerlink" title="①左除（ \ ）"></a>①左除（ \ ）</h4><p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>AX</strong>&#x3D;<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>A \ B</strong>是方程组<strong>AX</strong>&#x3D;<strong>B</strong>的解</p>
-<h4 id="②右除"><a href="#②右除" class="headerlink" title="②右除"></a>②右除</h4><p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>XA</strong>&#x3D;<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>B \ A</strong>是方程组<strong>XA</strong>&#x3D;<strong>B</strong>*的解</p>
-<h4 id="③元素左除"><a href="#③元素左除" class="headerlink" title="③元素左除"></a>③元素左除</h4><p> <strong>A .\ B</strong> 是指<strong>B</strong>的个元素除以A的对应元素</p>
-<h4 id="④元素右除"><a href="#④元素右除" class="headerlink" title="④元素右除"></a>④元素右除</h4><p> <strong>A .&#x2F; B</strong> 是指<strong>A</strong>的个元素除以<strong>B</strong>的对应元素</p>
-<h2 id="4、逻辑向量"><a href="#4、逻辑向量" class="headerlink" title="4、逻辑向量"></a>4、逻辑向量</h2><h3 id="1-逻辑表达式"><a href="#1-逻辑表达式" class="headerlink" title="(1) 逻辑表达式"></a>(1) 逻辑表达式</h3><p>逻辑向量使用产生真&#x2F;假的关系表达式</p>
+<h4 id="⑤向量积（cross）">⑤向量积（cross）</h4>
+<p>返回 A 和 B 的叉积<br>
+<strong>cross(A,B)<br>
+cross(A,B,dim)</strong></p>
+<h4 id="⑥混合积">⑥混合积</h4>
+<p><strong>dot(A,cross(B,C))</strong></p>
+<h4 id="⑦卷积（conv）">⑦卷积（conv）</h4>
+<p><strong>conv(A,B)</strong></p>
+<h4 id="⑧解卷积">⑧解卷积</h4>
+<p><strong>[q,r]=deconv(B,A)</strong></p>
+<h4 id="⑨张量积（kron）">⑨张量积（kron）</h4>
+<p><strong>kron(A,B)</strong><br>
+ </p>
+<h3 id="3-矩阵的除法">(3)矩阵的除法</h3>
+<h4 id="①左除（-）">①左除（ \ ）</h4>
+<p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>AX</strong>=<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>A \ B</strong>是方程组<strong>AX</strong>=<strong>B</strong>的解</p>
+<h4 id="②右除">②右除</h4>
+<p>当<strong>A</strong>、<strong>B</strong>是线性方程组<strong>XA</strong>=<strong>B</strong>中的系数矩阵和常数矩阵时，<strong>B \ A</strong>是方程组<strong>XA</strong>=<strong>B</strong>*的解</p>
+<h4 id="③元素左除">③元素左除</h4>
+<p><strong>A .\ B</strong> 是指<strong>B</strong>的个元素除以A的对应元素</p>
+<h4 id="④元素右除">④元素右除</h4>
+<p><strong>A ./ B</strong> 是指<strong>A</strong>的个元素除以<strong>B</strong>的对应元素</p>
+<h2 id="4、逻辑向量">4、逻辑向量</h2>
+<h3 id="1-逻辑表达式">(1) 逻辑表达式</h3>
+<p>逻辑向量使用产生真/假的关系表达式</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">a =<br><br>     <span class="hljs-number">5</span>     <span class="hljs-number">8</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">8</span><br><br>&gt;&gt; isg=a&gt;<span class="hljs-number">6</span><br><br>isg =<br><br>  <span class="hljs-number">2</span>×<span class="hljs-number">2</span> logical 数组<br><br>   <span class="hljs-number">0</span>   <span class="hljs-number">1</span><br>   <span class="hljs-number">0</span>   <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
 <p>结果是一个0、1组成的向量，可以在该isg向量上进行数值运算，但其类型是逻辑型。</p>
-<p>&emsp;<br>这个逻辑向量可以用来索引原始向量：</p>
+<p> <br>
+这个逻辑向量可以用来索引原始向量：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; a(isg)<br><br>ans =<br><br>     <span class="hljs-number">8</span><br>     <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-逻辑内置函数"><a href="#2-逻辑内置函数" class="headerlink" title="(2)逻辑内置函数"></a>(2)逻辑内置函数</h3><h4 id="①true、false函数"><a href="#①true、false函数" class="headerlink" title="①true、false函数"></a>①true、false函数</h4><p>可以创建全逻辑1或0的向量或矩阵</p>
+<h3 id="2-逻辑内置函数">(2)逻辑内置函数</h3>
+<h4 id="①true、false函数">①true、false函数</h4>
+<p>可以创建全逻辑1或0的向量或矩阵</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; false(<span class="hljs-number">2</span>)<br><br>ans =<br><br>  <span class="hljs-number">2</span>×<span class="hljs-number">2</span> logical 数组<br><br>   <span class="hljs-number">0</span>   <span class="hljs-number">0</span><br>   <span class="hljs-number">0</span>   <span class="hljs-number">0</span><br><br>&gt;&gt; true (<span class="hljs-number">1</span>,<span class="hljs-number">5</span>)<br><br>ans =<br><br>  <span class="hljs-number">1</span>×<span class="hljs-number">5</span> logical 数组<br><br>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span>   <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="②any、all函数"><a href="#②any、all函数" class="headerlink" title="②any、all函数"></a>②any、all函数</h4><p>任意元素为逻辑真（非零），any函数返回逻辑真<br>所有元素为非零时，all函数返回逻辑真</p>
-<h4 id="③find函数"><a href="#③find函数" class="headerlink" title="③find函数"></a>③find函数</h4><p>find函数返回满足规定条件的索引下标</p>
+<h4 id="②any、all函数">②any、all函数</h4>
+<p>任意元素为逻辑真（非零），any函数返回逻辑真<br>
+所有元素为非零时，all函数返回逻辑真</p>
+<h4 id="③find函数">③find函数</h4>
+<p>find函数返回满足规定条件的索引下标</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">&gt;&gt; find(b&gt;<span class="hljs-number">5</span>)<br><br>ans =<br><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br><br>&gt;&gt; find(a&gt;<span class="hljs-number">4</span>)<br><br>ans =<br><br>     <span class="hljs-number">1</span><br>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-
 <p>（对矩阵使用线性索引）</p>
-<h4 id="④isequal函数"><a href="#④isequal函数" class="headerlink" title="④isequal函数"></a>④isequal函数</h4><p>两向量相等则返回1，否则返回0</p>
+<h4 id="④isequal函数">④isequal函数</h4>
+<p>两向量相等则返回1，否则返回0</p>
 
                 
               </div>
@@ -616,6 +653,11 @@
 
 
   
+
+
+  
+  
+
 
 
 

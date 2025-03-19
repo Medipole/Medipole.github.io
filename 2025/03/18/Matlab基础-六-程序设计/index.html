@@ -46,6 +46,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -277,84 +279,120 @@
               <div class="markdown-body">
                 
                 <p>@<a href="%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">TOC</a></p>
-<h1 id="一、M文件"><a href="#一、M文件" class="headerlink" title="一、M文件"></a>一、M文件</h1><h2 id="1-M文件的类型"><a href="#1-M文件的类型" class="headerlink" title="1.M文件的类型"></a>1.M文件的类型</h2><p>用MATLAB语言编写的程序，称为M文件。 M文件可以根据调用方式的不同分为两类：</p>
+<h1>一、M文件</h1>
+<h2 id="1-M文件的类型">1.M文件的类型</h2>
+<p>用MATLAB语言编写的程序，称为M文件。 M文件可以根据调用方式的不同分为两类：</p>
 <ul>
 <li>脚本文件（命令文件） (Script File)</li>
 <li>函数文件(Function File)</li>
 </ul>
-<h3 id="①脚本文件"><a href="#①脚本文件" class="headerlink" title="①脚本文件"></a>①脚本文件</h3><p>将原本要在MATLAB环境下直接输入的多条语句，存放为.m后缀的文件，在命令行键入文件名，替代多条语句，一次执行成批命令。</p>
-<h3 id="②函数文件"><a href="#②函数文件" class="headerlink" title="②函数文件"></a>②函数文件</h3><p>以固定格式书写的程序代码，第一行是函数定义行，有输入参数和输出参数，由function引导；函数中的变量一般是局部变量，也可以声明全局变量；</p>
+<h3 id="①脚本文件">①脚本文件</h3>
+<p>将原本要在MATLAB环境下直接输入的多条语句，存放为.m后缀的文件，在命令行键入文件名，替代多条语句，一次执行成批命令。</p>
+<h3 id="②函数文件">②函数文件</h3>
+<p>以固定格式书写的程序代码，第一行是函数定义行，有输入参数和输出参数，由function引导；函数中的变量一般是局部变量，也可以声明全局变量；</p>
 <ul>
-<li><p>函数m文件的格式</p>
+<li>
+<p>函数m文件的格式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab&#123;.line-numbers&#125;">function  [ 输出形参 ] = 函数名[ 输入形参 ]<br>%注释<br>内容<br></code></pre></td></tr></table></figure>
-
-<p>  &#x3D;&#x3D;注意&#x3D;&#x3D;：函数文件名要和主函数的名字一致</p>
+<p>==注意==：函数文件名要和主函数的名字一致</p>
 <pre><code class="hljs">                  输入形参以圆括号（）表示，输出形参以方括号[]表示（注：输出形参为一个的时候可以不用[]）
 </code></pre>
-<p>如果<code>a=function[x,y,z]</code>        ,则默认输出第一个输出形参<br>可以<code>[~,b]=function[x,y,z]</code>,来输出第二个输出形参<br>即：通过<code>~</code>符号，忽略函数返回的某个参数。<br>&emsp;                        </p>
+<p>如果<code>a=function[x,y,z]</code>        ,则默认输出第一个输出形参<br>
+可以<code>[~,b]=function[x,y,z]</code>,来输出第二个输出形参<br>
+即：通过<code>~</code>符号，忽略函数返回的某个参数。<br>
+ </p>
 </li>
-<li><p>函数m文件的调用格式<br>  [输出实参表]&#x3D;函数名(输入实参表)<br>&emsp;</p>
+<li>
+<p>函数m文件的调用格式<br>
+[输出实参表]=函数名(输入实参表)<br>
+ </p>
 </li>
-<li><p>函数变量<br>  函数内部产生的是局部变量，除非特殊说明为全局变量，局部变量会在函数调用完毕后随函数的结束而清除。<br>  声明一个变量为全局变量：<code>global  变量1，变量2</code><br>&emsp;</p>
+<li>
+<p>函数变量<br>
+函数内部产生的是局部变量，除非特殊说明为全局变量，局部变量会在函数调用完毕后随函数的结束而清除。<br>
+声明一个变量为全局变量：<code>global  变量1，变量2</code><br>
+ </p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[output]</span> = <span class="hljs-title">average</span><span class="hljs-params">(inputArg)</span></span><br><span class="hljs-comment">%AVERAGE 向量元素求均值</span><br><span class="hljs-comment">%   单纯求均值,为示例子函数而写</span><br>N=<span class="hljs-built_in">length</span>(inputArg);<br>output=GGBOND(inputArg,N)<br><span class="hljs-keyword">end</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hh</span>=<span class="hljs-title">GGBOND</span><span class="hljs-params">(X,N)</span>        </span><br>hh=sum(X)/N;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&gt;&gt; x<span class="hljs-operator">=</span>[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]<span class="hljs-comment">;</span><br>&gt;&gt; average(x)<br><span class="hljs-attribute">output</span> <span class="hljs-operator">=</span><br><span class="hljs-number">3.5000</span><br><br><span class="hljs-attribute">ans</span> <span class="hljs-operator">=</span><br><span class="hljs-number">3.5000</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&gt;&gt; x<span class="hljs-operator">=</span>[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]<span class="hljs-comment">;</span><br>&gt;&gt; average(x)<br><span class="hljs-attribute">output</span> <span class="hljs-operator">=</span><br><span class="hljs-number">3.5000</span><br><br><span class="hljs-attribute">ans</span> <span class="hljs-operator">=</span><br><span class="hljs-number">3.5000</span><br></code></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="③函数句柄"><a href="#③函数句柄" class="headerlink" title="③函数句柄"></a>③函数句柄</h3><p>函数句柄的作用是将一个函数封装成一个变量，使其能够像其它变量一样在程序的不同部分传递。<br>语法：<code>@函数名fun1 = @sin;</code></p>
-<h1 id="二、Matlab程序的控制语句"><a href="#二、Matlab程序的控制语句" class="headerlink" title="二、Matlab程序的控制语句"></a>二、Matlab程序的控制语句</h1><h2 id="1-顺序语句"><a href="#1-顺序语句" class="headerlink" title="1.顺序语句"></a>1.顺序语句</h2><p>自不待言。</p>
-<h2 id="2-选择结构"><a href="#2-选择结构" class="headerlink" title="2.选择结构"></a>2.选择结构</h2><h3 id="①if-语句"><a href="#①if-语句" class="headerlink" title="①if 语句"></a>①<code>if</code> 语句</h3><ul>
+<h3 id="③函数句柄">③函数句柄</h3>
+<p>函数句柄的作用是将一个函数封装成一个变量，使其能够像其它变量一样在程序的不同部分传递。<br>
+语法：<code>@函数名fun1 = @sin;</code></p>
+<h1>二、Matlab程序的控制语句</h1>
+<h2 id="1-顺序语句">1.顺序语句</h2>
+<p>自不待言。</p>
+<h2 id="2-选择结构">2.选择结构</h2>
+<h3 id="①if-语句">①<code>if</code> 语句</h3>
+<ul>
 <li>单分支if语句</li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span>   condition<br>     语句组<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
 <ul>
-<li><p>双分支if语句</p>
+<li>
+<p>双分支if语句</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span>   condition<br>     语句组<span class="hljs-number">1</span><br><span class="hljs-keyword">else</span><br>        语句组<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p>多分支if语句</p>
+<li>
+<p>多分支if语句</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span>   条件<span class="hljs-number">1</span><br>     语句组<span class="hljs-number">1</span><br><span class="hljs-keyword">elseif</span>   条件<span class="hljs-number">2</span><br>       语句组<span class="hljs-number">2</span><br>       ……<br><span class="hljs-keyword">elseif</span>   条件m<span class="hljs-number">-1</span><br>       语句组m<span class="hljs-number">-1</span><br><span class="hljs-keyword">else</span><br>       语句组m<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="②switch语句"><a href="#②switch语句" class="headerlink" title="②switch语句"></a>②<code>switch</code>语句</h3></li>
+<h3 id="②switch语句">②<code>switch</code>语句</h3>
+</li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">switch</span> 表达式<br><span class="hljs-keyword">case</span> 表达式值<span class="hljs-number">1</span><br>语句组<span class="hljs-number">1</span><br><span class="hljs-keyword">case</span> 表达式值<span class="hljs-number">2</span><br>语句组<span class="hljs-number">2</span><br>……<br><span class="hljs-keyword">case</span> 表达式值m<span class="hljs-number">-1</span><br>语句组m<span class="hljs-number">-1</span><br><span class="hljs-keyword">otherwise</span><br>语句组m<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
-<p>当表达式的值等于表达式m-1的值时，执行语句组m-1;<br>当表达式的值不等于case所列的表达式的值时，执行语句组m;<br>当任意一个分支的语句执行完后，直接执行switch语句的下一句;</p>
-<h3 id="③try语句"><a href="#③try语句" class="headerlink" title="③try语句"></a>③<code>try</code>语句</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">try</span> <br>    语句组<span class="hljs-number">1</span><br><span class="hljs-keyword">catch</span><br>    语句组<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
+<p>当表达式的值等于表达式m-1的值时，执行语句组m-1;<br>
+当表达式的值不等于case所列的表达式的值时，执行语句组m;<br>
+当任意一个分支的语句执行完后，直接执行switch语句的下一句;</p>
+<h3 id="③try语句">③<code>try</code>语句</h3>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">try</span> <br>    语句组<span class="hljs-number">1</span><br><span class="hljs-keyword">catch</span><br>    语句组<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
 <p>try语句先试探性执行语句组1，如果语句组1在执行过程中出现错误，则将错误信息赋给保留的lasterr变量，并转去执行语句组2。</p>
-<h2 id="3-循环结构"><a href="#3-循环结构" class="headerlink" title="3.循环结构"></a>3.循环结构</h2><h3 id="①for语句"><a href="#①for语句" class="headerlink" title="①for语句"></a>①for语句</h3><ul>
-<li><p>第一种表示方式</p>
+<h2 id="3-循环结构">3.循环结构</h2>
+<h3 id="①for语句">①for语句</h3>
+<ul>
+<li>
+<p>第一种表示方式</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">for 循环变量 <span class="hljs-operator">=</span> 初值：步长：终值<br>     循环体语句<br>end<br></code></pre></td></tr></table></figure>
-
 <p>eg.一个求水仙花数的示例</p>
 </li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> m=<span class="hljs-number">100</span>:<span class="hljs-number">999</span><br>m1=<span class="hljs-built_in">floor</span>(m/<span class="hljs-number">100</span>); <span class="hljs-comment">%求m的百位数字</span><br>m2=<span class="hljs-built_in">rem</span>(<span class="hljs-built_in">floor</span>(m/<span class="hljs-number">10</span>),<span class="hljs-number">10</span>); <span class="hljs-comment">%求m的十位数字</span><br>m3=<span class="hljs-built_in">rem</span>(m,<span class="hljs-number">10</span>); <span class="hljs-comment">%求m的个位数字 rem求余数</span><br><span class="hljs-keyword">if</span> m==m1*m1*m1+m2*m2*m2+m3*m3*m3<br><span class="hljs-built_in">disp</span>(m) <span class="hljs-comment">%显示变量</span><br><span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
-<p>输出：<br> 153<br> 370<br> 371<br> 407</p>
+<p>输出：<br>
+153<br>
+370<br>
+371<br>
+407</p>
 <ul>
-<li><p>第二种表达方式</p>
+<li>
+<p>第二种表达方式</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">for 循环变量 <span class="hljs-operator">=</span> 矩阵表达式<br>     循环体语句<br>end<br></code></pre></td></tr></table></figure>
-
 <p>执行过程是依次将矩阵的各列元素赋给循环变量，然后执行循环体语句，直至各列元素处理完毕。</p>
 </li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> v = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>;<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>]<br>   <span class="hljs-built_in">disp</span>(v)<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
 <p>输出</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab"> <span class="hljs-number">1</span><br> <span class="hljs-number">5</span><br> <span class="hljs-number">8</span><br><br> <span class="hljs-number">2</span><br> <span class="hljs-number">6</span><br> <span class="hljs-number">9</span><br><br> <span class="hljs-number">3</span><br> <span class="hljs-number">7</span><br><span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
-
-<p>&emsp;</p>
+<p> </p>
 <p>求矩阵每行元素之和</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">s=<span class="hljs-number">0</span>;<br>a=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>;<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>;<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>];<br><span class="hljs-keyword">for</span> k=a<br>s=s+k;<br><span class="hljs-keyword">end</span><br>s;<br></code></pre></td></tr></table></figure>
-
-<p>k(1)&#x3D;[1 5 8];<br>k(2)&#x3D;[2 6 9];<br>k(3)&#x3D;[3 7 10];</p>
-<h3 id="②while-语句"><a href="#②while-语句" class="headerlink" title="②while 语句"></a>②while 语句</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">while</span> (条件)<br>        循环体语句<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="4-交互语句"><a href="#4-交互语句" class="headerlink" title="4.交互语句"></a>4.交互语句</h2><h3 id="（1）输入输出控制命令-input"><a href="#（1）输入输出控制命令-input" class="headerlink" title="（1）输入输出控制命令(input)"></a>（1）输入输出控制命令(input)</h3><p><code>R=input(&#39;xxx&#39;)</code>:在屏幕上显示提示信息xxx，等待输入数据并赋值给R</p>
+<p>k(1)=[1 5 8];<br>
+k(2)=[2 6 9];<br>
+k(3)=[3 7 10];</p>
+<h3 id="②while-语句">②while 语句</h3>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">while</span> (条件)<br>        循环体语句<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h2 id="4-交互语句">4.交互语句</h2>
+<h3 id="（1）输入输出控制命令-input">（1）输入输出控制命令(input)</h3>
+<p><code>R=input('xxx')</code>:在屏幕上显示提示信息xxx，等待输入数据并赋值给R</p>
 <p><code>keyboard</code>:停止执行程序，将控制权交给键盘，等待用户输入并在命令提示符前显示K以示区别</p>
-<h3 id="（2）等待用户响应命令-pause"><a href="#（2）等待用户响应命令-pause" class="headerlink" title="（2）等待用户响应命令(pause)"></a>（2）等待用户响应命令(pause)</h3><p><code>pause</code>：终止当前运行的M文件，等待用户按任意键后继续运行。<br><code>pause(n)</code>：在屏幕上显示提示信息xxx，等待n秒继续运行。<br><code>pause on</code>：允许以后的运行过程中使用pause命令。<br><code>pause off</code>：不允许以后的运行过程中使用pause命令</p>
-<h3 id="（3）中断、继续、转向命令"><a href="#（3）中断、继续、转向命令" class="headerlink" title="（3）中断、继续、转向命令"></a>（3）中断、继续、转向命令</h3><p><code>break</code>就是直接跳出该层循环<br><code>continue</code>就是直接进入该层循环的下一次迭代<br><code>return</code>就是直接退出程序或函数返回了<br>大概的关系如下 <code>return&gt;break&gt;continue</code></p>
+<h3 id="（2）等待用户响应命令-pause">（2）等待用户响应命令(pause)</h3>
+<p><code>pause</code>：终止当前运行的M文件，等待用户按任意键后继续运行。<br>
+<code>pause(n)</code>：在屏幕上显示提示信息xxx，等待n秒继续运行。<br>
+<code>pause on</code>：允许以后的运行过程中使用pause命令。<br>
+<code>pause off</code>：不允许以后的运行过程中使用pause命令</p>
+<h3 id="（3）中断、继续、转向命令">（3）中断、继续、转向命令</h3>
+<p><code>break</code>就是直接跳出该层循环<br>
+<code>continue</code>就是直接进入该层循环的下一次迭代<br>
+<code>return</code>就是直接退出程序或函数返回了<br>
+大概的关系如下 <code>return&gt;break&gt;continue</code></p>
 <p>验证输入的自然数是不是素数:</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs matlab">m=input(<span class="hljs-string">&#x27;请输入数字&#x27;</span>)<br>k=<span class="hljs-built_in">sqrt</span>(m);<br>ii=<span class="hljs-number">2</span>;<br><span class="hljs-keyword">while</span> ii<br>ii<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">rem</span>(m,ii)==<span class="hljs-number">0</span><br><span class="hljs-keyword">break</span><br><span class="hljs-keyword">else</span><br>ii=ii+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">end</span><br><span class="hljs-keyword">if</span> ii&gt;k<br><span class="hljs-string">&#x27;输入的是素数&#x27;</span><br><span class="hljs-keyword">return</span><br><span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br><span class="hljs-string">&#x27;输入的不是素数&#x27;</span><br></code></pre></td></tr></table></figure>
 
@@ -515,6 +553,11 @@
 
 
   
+
+
+  
+  
+
 
 
 
