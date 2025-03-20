@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/Medipole/Blog/img/fluid.png">
-  <link rel="icon" href="/Medipole/Blog/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,29 +22,29 @@
     <meta name="description" content="Matlab 课堂入门笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab基础(五)可视化功能">
-<meta property="og:url" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:url" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="Payton 随笔">
 <meta property="og:description" content="Matlab 课堂入门笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/1.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/2.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/3.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/4.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/5.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/6.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/7.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/8.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/9.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/10.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/11.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/12.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/13.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/1.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/2.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/3.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/4.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/5.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/6.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/7.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/8.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/9.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/10.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/11.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/12.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/13.png">
 <meta property="article:published_time" content="2025-03-18T12:55:50.000Z">
 <meta property="article:modified_time" content="2025-03-18T13:11:40.672Z">
 <meta property="article:author" content="Payton">
 <meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/1.png">
+<meta name="twitter:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/1.png">
   
   
   
@@ -74,12 +74,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/Medipole/Blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Medipole/Blog/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Medipole/Blog/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -88,15 +88,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"github.com","root":"/Medipole/Blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/Medipole/Blog/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"medipole.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Medipole/Blog/js/utils.js" ></script>
-  <script  src="/Medipole/Blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -113,7 +113,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Medipole/Blog/">
+    <a class="navbar-brand" href="/">
       <strong>Payton</strong>
     </a>
 
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/" target="_self">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/archives/" target="_self">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/categories/" target="_self">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/tags/" target="_self">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/about/" target="_self">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -210,7 +210,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Medipole/Blog/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -295,7 +295,7 @@
                 <p>@<a href="Matlab%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E2%80%94%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD">TOC</a></p>
 <h1>一、图形图窗常用命令</h1>
 <h2 id="1-图形窗口操作命令">1. 图形窗口操作命令</h2>
-<p><img src="1.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="1.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h3 id="hold-on"><code>hold on</code></h3>
 <p> 保持当前图形，并允许在当前图状态下，用同样的缩放比例加入另一个图形。<br>
 <code>hold off</code><br>
@@ -319,13 +319,13 @@
 </code></pre>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)<br>x = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>);<br>y1 = <span class="hljs-built_in">sin</span>(x);<br><span class="hljs-built_in">plot</span>(x,y1)<br>title(<span class="hljs-string">&#x27;Subplot 1: sin(x)&#x27;</span>)<br><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>)<br>y2 = <span class="hljs-built_in">sin</span>(<span class="hljs-number">2</span>*x);<br><span class="hljs-built_in">plot</span>(x,y2)<br>title(<span class="hljs-string">&#x27;Subplot 2: sin(2x)&#x27;</span>)<br><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br>y3 = <span class="hljs-built_in">sin</span>(<span class="hljs-number">4</span>*x);<br><span class="hljs-built_in">plot</span>(x,y3)<br>title(<span class="hljs-string">&#x27;Subplot 3: sin(4x)&#x27;</span>)<br><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>)<br>y4 = <span class="hljs-built_in">sin</span>(<span class="hljs-number">8</span>*x);<br><span class="hljs-built_in">plot</span>(x,y4)<br>title(<span class="hljs-string">&#x27;Subplot 4: sin(8x)&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <p>输出：<br>
-<img src="2.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="2.png" srcset="/img/loading.gif" lazyload alt=""><br>
  <br>
 可绘制大小不同的子图：</p>
 </li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>);<br>x = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">-3.8</span>,<span class="hljs-number">3.8</span>);<br>y_cos = <span class="hljs-built_in">cos</span>(x);<br><span class="hljs-built_in">plot</span>(x,y_cos);<br>title(<span class="hljs-string">&#x27;Subplot 1: Cosine&#x27;</span>)<br><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>);<br>y_poly = <span class="hljs-number">1</span> - x.^<span class="hljs-number">2.</span>/<span class="hljs-number">2</span> + x.^<span class="hljs-number">4.</span>/<span class="hljs-number">24</span>;<br><span class="hljs-built_in">plot</span>(x,y_poly,<span class="hljs-string">&#x27;g&#x27;</span>);<br>title(<span class="hljs-string">&#x27;Subplot 2: Polynomial&#x27;</span>)<br><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]);<br><span class="hljs-built_in">plot</span>(x,y_cos,<span class="hljs-string">&#x27;b&#x27;</span>,x,y_poly,<span class="hljs-string">&#x27;g&#x27;</span>);<br>title(<span class="hljs-string">&#x27;Subplot 3 and 4: Both&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<p><img src="3.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="3.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <pre><code class="hljs">单窗口模式相当于subplot(1,1,1)
 </code></pre>
 <p>推荐使用：<br>
@@ -348,12 +348,12 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 <li>axis visibility，其中 visibility 为 off，即关闭坐标区背景的显示。而坐标区中的绘图仍会显示。visibility 的默认值为 on，即显示坐标区背景。</li>
 <li>axis(axis)固定坐标轴刻度，即当图形窗口位于hold on状态下也不该百年坐标轴刻度。<br>
  <br>
-<img src="4.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="4.png" srcset="/img/loading.gif" lazyload alt=""><br>
   <br>
  </li>
 </ul>
 <h2 id="3-线型、点型及颜色参数">3.线型、点型及颜色参数</h2>
-<p><img src="5.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<p><img src="5.png" srcset="/img/loading.gif" lazyload alt=""><br>
  </p>
 <h1>二、二维绘图</h1>
 <h2 id="1-数据曲线图">1.数据曲线图</h2>
@@ -464,7 +464,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 </li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; X = [<span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">0.5</span> <span class="hljs-number">2.5</span> <span class="hljs-number">2</span>];<br>pie(X)<br></code></pre></td></tr></table></figure>
-<p><img src="6.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="6.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">X = <span class="hljs-number">1</span>:<span class="hljs-number">3</span>;<br>labels = &#123;<span class="hljs-string">&#x27;Taxes&#x27;</span>,<span class="hljs-string">&#x27;Expenses&#x27;</span>,<span class="hljs-string">&#x27;Profit&#x27;</span>&#125;;<br>pie(X,labels)<br></code></pre></td></tr></table></figure>
 <p><code>labels</code>可以改变饼图的文本标签</p>
 <p>设置图例：</p>
@@ -486,7 +486,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 <p> <br>
 例子：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>,<span class="hljs-number">3</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">200</span>);<br>y = <span class="hljs-built_in">cos</span>(x) + <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,<span class="hljs-number">200</span>);<br>c = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>,<span class="hljs-built_in">length</span>(x));<br><span class="hljs-built_in">scatter</span>(x,y,[],c)<br></code></pre></td></tr></table></figure>
-<p><img src="7.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="7.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h2 id="8-数据直方图">8.数据直方图</h2>
 <h3 id="hist"><code>hist</code></h3>
 <p><code>hist(x)</code></p>
@@ -501,7 +501,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 其中x是一个向量，返回x的长度个以x的元素为中心的容器内的，Y的分布情况。</p>
 <p>例子：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">data=<span class="hljs-built_in">randn</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1e5</span>);<br>x=[<span class="hljs-number">-10</span>:<span class="hljs-number">0.01</span>:<span class="hljs-number">10</span>];<br>y=hist(data,x);<br>N=<span class="hljs-built_in">length</span>(data);<br>y=y/N;<br>y1=y/<span class="hljs-number">0.01</span>;<br>y2=<span class="hljs-number">1</span>/<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>)*<span class="hljs-built_in">exp</span>(-x.^<span class="hljs-number">2.</span>/<span class="hljs-number">2</span>);<br><span class="hljs-built_in">figure</span>;<span class="hljs-built_in">plot</span>(y1);<span class="hljs-built_in">hold</span> on ;<span class="hljs-built_in">plot</span>(y2);<br></code></pre></td></tr></table></figure>
-<p><img src="8.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<p><img src="8.png" srcset="/img/loading.gif" lazyload alt=""><br>
  <br>
  </p>
 <h1>三、三维绘图</h1>
@@ -525,7 +525,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 </ul>
 <p>例子：绘制曲面图</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-number">-2</span>:<span class="hljs-number">0.25</span>:<span class="hljs-number">2</span>;<br>[X,Y] = <span class="hljs-built_in">meshgrid</span>(x);<br>F = X.*<span class="hljs-built_in">exp</span>(-X.^<span class="hljs-number">2</span>-Y.^<span class="hljs-number">2</span>);<br>surf(X,Y,F)<br></code></pre></td></tr></table></figure>
-<p><img src="9.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="9.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <ul>
 <li>
 <p><code>[X,Y,Z] = meshgrid(x,y,z)</code> 返回由向量 x、y 和 z 定义的三维网格坐标。X、Y 和 Z 表示的网格的大小为 <code>length(y)×length(x)×length(z)</code>。<br>
@@ -539,7 +539,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 <p><code>mesh(___,C)</code> 进一步指定边的颜色。</p>
 <p>例子：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">[X,Y] = <span class="hljs-built_in">meshgrid</span>(<span class="hljs-number">-8</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">8</span>);<br>R = <span class="hljs-built_in">sqrt</span>(X.^<span class="hljs-number">2</span> + Y.^<span class="hljs-number">2</span>) + <span class="hljs-built_in">eps</span>;<br>Z = <span class="hljs-built_in">sin</span>(R)./R;<br>mesh(X,Y,Z)<br></code></pre></td></tr></table></figure>
-<p><img src="10.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<p><img src="10.png" srcset="/img/loading.gif" lazyload alt=""><br>
  </p>
 <h2 id="2-三维曲线图">2.三维曲线图</h2>
 <h3 id="plot3-x-y-z-S"><code>plot3(x,y,z,S)</code></h3>
@@ -552,7 +552,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 <h3 id="bar3"><code>bar3</code></h3>
 <p>eg.</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">y = [<span class="hljs-number">1950</span> <span class="hljs-number">1960</span> <span class="hljs-number">1970</span> <span class="hljs-number">1980</span> <span class="hljs-number">1990</span>];<br>z = [<span class="hljs-number">16</span> <span class="hljs-number">8</span> <span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span>];<br>bar3(y,z)<br></code></pre></td></tr></table></figure>
-<p><img src="11.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<p><img src="11.png" srcset="/img/loading.gif" lazyload alt=""><br>
  <br>
  </p>
 <h2 id="4-三维散点图">4.三维散点图</h2>
@@ -574,8 +574,8 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 <pre><code class="hljs">将图像写入图形文件
 </code></pre>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">% 保存 imagesc 生成的图像</span><br>imagesc(x, y, Z);<br>colorbar;<br>title(<span class="hljs-string">&#x27;x^2 + y^2&#x27;</span>);<br>xlabel(<span class="hljs-string">&#x27;x&#x27;</span>);<br>ylabel(<span class="hljs-string">&#x27;y&#x27;</span>);<br>imagesc_img = getframe(gcf); <span class="hljs-comment">% 获取图像数据</span><br>imwrite(imagesc_img.cdata, <span class="hljs-string">&#x27;imagesc_plot.png&#x27;</span>); <span class="hljs-comment">% 使用 imwrite 保存图像</span><br><br><span class="hljs-comment">% 保存 contour 生成的图像</span><br><span class="hljs-built_in">figure</span>;<br>contour(X, Y, Z);<br>colorbar;<br>title(<span class="hljs-string">&#x27;Contour Plot of x^2 + y^2&#x27;</span>);<br>xlabel(<span class="hljs-string">&#x27;x&#x27;</span>);<br>ylabel(<span class="hljs-string">&#x27;y&#x27;</span>);<br>contour_img = getframe(gcf); <span class="hljs-comment">% 获取图像数据</span><br>imwrite(contour_img.cdata, <span class="hljs-string">&#x27;contour_plot.png&#x27;</span>); <span class="hljs-comment">% 使用 imwrite 保存图像</span><br></code></pre></td></tr></table></figure>
-<p><img src="12.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
-<img src="13.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<p><img src="12.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<img src="13.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h3 id="plotyy"><code>plotyy</code></h3>
 <pre><code class="hljs">双纵轴绘图
 </code></pre>
@@ -624,7 +624,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
     
       <span class="category-chain">
         
-  <a href="/Medipole/Blog/categories/Matlab/" class="category-chain-item">Matlab</a>
+  <a href="/categories/Matlab/" class="category-chain-item">Matlab</a>
   
   
 
@@ -639,7 +639,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Medipole/Blog/tags/Matlab/" class="print-no-link">#Matlab</a>
+        <a href="/tags/Matlab/" class="print-no-link">#Matlab</a>
       
     </div>
   
@@ -652,7 +652,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
   <div class="license-box my-3">
     <div class="license-title">
       <div>Matlab基础(五)可视化功能</div>
-      <div>https://github.com/Medipole/Blog/2025/03/18/Matlab基础-五-可视化功能/</div>
+      <div>https://medipole.github.io/2025/03/18/Matlab基础-五-可视化功能/</div>
     </div>
     <div class="license-meta">
       
@@ -696,7 +696,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%85%AD-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" title="Matlab基础(六)程序设计">
+                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%85%AD-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" title="Matlab基础(六)程序设计">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Matlab基础(六)程序设计</span>
                         <span class="visible-mobile">上一篇</span>
@@ -706,7 +706,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/" title="Matlab基础(四)符号计算">
+                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/" title="Matlab基础(四)符号计算">
                         <span class="hidden-mobile">Matlab基础(四)符号计算</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -840,8 +840,8 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Medipole/Blog/js/events.js" ></script>
-<script  src="/Medipole/Blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -863,7 +863,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 
 
   
-    <script  src="/Medipole/Blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -962,7 +962,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Medipole/Blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -970,7 +970,7 @@ mode — 用来确定坐标轴范围的手动、自动或半自动选择<br>
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Medipole/Blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   

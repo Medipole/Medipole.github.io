@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/Medipole/Blog/img/fluid.png">
-  <link rel="icon" href="/Medipole/Blog/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,18 +22,18 @@
     <meta name="description" content="Matlab 课堂入门笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB基础(二)向量与矩阵">
-<meta property="og:url" content="https://github.com/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/index.html">
+<meta property="og:url" content="https://medipole.github.io/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/index.html">
 <meta property="og:site_name" content="Payton 随笔">
 <meta property="og:description" content="Matlab 课堂入门笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/1.png">
-<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/2.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/1.png">
+<meta property="og:image" content="https://medipole.github.io/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/2.png">
 <meta property="article:published_time" content="2025-03-18T11:56:28.000Z">
 <meta property="article:modified_time" content="2025-03-18T12:27:35.424Z">
 <meta property="article:author" content="Payton">
 <meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/1.png">
+<meta name="twitter:image" content="https://medipole.github.io/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/1.png">
   
   
   
@@ -63,12 +63,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/Medipole/Blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Medipole/Blog/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Medipole/Blog/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -77,15 +77,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"github.com","root":"/Medipole/Blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/Medipole/Blog/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"medipole.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Medipole/Blog/js/utils.js" ></script>
-  <script  src="/Medipole/Blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -102,7 +102,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Medipole/Blog/">
+    <a class="navbar-brand" href="/">
       <strong>Payton</strong>
     </a>
 
@@ -121,7 +121,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/" target="_self">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -133,7 +133,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/archives/" target="_self">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/categories/" target="_self">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -157,7 +157,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/tags/" target="_self">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -169,7 +169,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Medipole/Blog/about/" target="_self">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -199,7 +199,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Medipole/Blog/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -434,7 +434,7 @@
 <h3 id="2-矩阵的乘法">(2)矩阵的乘法</h3>
 <h4 id="①正常乘（-）">①正常乘（*）</h4>
 <p>C = A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br>
-<img src="1.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<img src="1.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="②数乘（-）">②数乘（*）</h4>
 <p>用这个常数去乘矩阵的每一个元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; <span class="hljs-number">3</span>*c<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
@@ -450,7 +450,7 @@
 <p>考虑两个二维输入数组：A 和 B：</p>
 <p><code>dot(A,B,1)</code> 将 A 和 B 的列视为向量，并返回对应列的点积。</p>
 <p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br>
-<img src="2.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
+<img src="2.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>如果 <code>dim</code> 大于 <code>ndims(A)</code>，则 <code>dot</code> 返回 <code>conj(A).*B</code>。</p>
 <h4 id="⑤向量积（cross）">⑤向量积（cross）</h4>
 <p>返回 A 和 B 的叉积<br>
@@ -513,7 +513,7 @@ cross(A,B,dim)</strong></p>
     
       <span class="category-chain">
         
-  <a href="/Medipole/Blog/categories/Matlab/" class="category-chain-item">Matlab</a>
+  <a href="/categories/Matlab/" class="category-chain-item">Matlab</a>
   
   
 
@@ -528,7 +528,7 @@ cross(A,B,dim)</strong></p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Medipole/Blog/tags/Matlab/" class="print-no-link">#Matlab</a>
+        <a href="/tags/Matlab/" class="print-no-link">#Matlab</a>
       
     </div>
   
@@ -541,7 +541,7 @@ cross(A,B,dim)</strong></p>
   <div class="license-box my-3">
     <div class="license-title">
       <div>MATLAB基础(二)向量与矩阵</div>
-      <div>https://github.com/Medipole/Blog/2025/03/18/MATLAB基础-二-向量与矩阵/</div>
+      <div>https://medipole.github.io/2025/03/18/MATLAB基础-二-向量与矩阵/</div>
     </div>
     <div class="license-meta">
       
@@ -585,7 +585,7 @@ cross(A,B,dim)</strong></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" title="Matlab基础(三)数值计算">
+                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" title="Matlab基础(三)数值计算">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Matlab基础(三)数值计算</span>
                         <span class="visible-mobile">上一篇</span>
@@ -595,7 +595,7 @@ cross(A,B,dim)</strong></p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="MATLAB基础（一）">
+                      <a href="/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="MATLAB基础（一）">
                         <span class="hidden-mobile">MATLAB基础（一）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -729,8 +729,8 @@ cross(A,B,dim)</strong></p>
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Medipole/Blog/js/events.js" ></script>
-<script  src="/Medipole/Blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -752,7 +752,7 @@ cross(A,B,dim)</strong></p>
 
 
   
-    <script  src="/Medipole/Blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -851,7 +851,7 @@ cross(A,B,dim)</strong></p>
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Medipole/Blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -859,7 +859,7 @@ cross(A,B,dim)</strong></p>
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Medipole/Blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
