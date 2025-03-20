@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Medipole/Blog/img/fluid.png">
+  <link rel="icon" href="/Medipole/Blog/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,29 +22,29 @@
     <meta name="description" content="Matlab 课堂入门笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab基础(四)符号计算">
-<meta property="og:url" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/index.html">
+<meta property="og:url" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/index.html">
 <meta property="og:site_name" content="Payton 随笔">
 <meta property="og:description" content="Matlab 课堂入门笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/2.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/3.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/4.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/5.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/6.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/7.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/8.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/9.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/10.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/11.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/12.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/13.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/2.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/3.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/4.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/5.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/6.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/7.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/8.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/9.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/10.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/11.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/12.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/13.png">
 <meta property="article:published_time" content="2025-03-18T12:49:09.000Z">
 <meta property="article:modified_time" content="2025-03-18T13:09:35.117Z">
 <meta property="article:author" content="Payton">
 <meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
+<meta name="twitter:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/1.png">
   
   
   
@@ -74,12 +74,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/Medipole/Blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/Medipole/Blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/Medipole/Blog/css/highlight-dark.css" />
   
 
 
@@ -88,15 +88,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"medipole.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/Medipole/Blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/Medipole/Blog/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/Medipole/Blog/js/utils.js" ></script>
+  <script  src="/Medipole/Blog/js/color-schema.js" ></script>
   
 
 
@@ -113,7 +113,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/Medipole/Blog/">
       <strong>Payton</strong>
     </a>
 
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -210,7 +210,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/Medipole/Blog/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -302,10 +302,10 @@
 Matlab系统有默认的符号自变量,主要为：<code>x,x1,y,y1,z,v,u,t,theta,alpha</code></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms x y u v <br>f=x*<span class="hljs-built_in">log</span>(x)+y*u<br></code></pre></td></tr></table></figure>
 <h1>2.符号矩阵的运算</h1>
-<p><img src="1.png" srcset="/img/loading.gif" lazyload alt=""><br>
-<img src="2.png" srcset="/img/loading.gif" lazyload alt=""><br>
-<img src="3.png" srcset="/img/loading.gif" lazyload alt=""><br>
-<img src="4.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="1.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="2.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="3.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="4.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <h1>3.符号表达式运算</h1>
 <h3 id="1-基本运算">(1)基本运算</h3>
 <h4 id="collect-S-v-——-按指定变量v的次数对符号多项式S合并同类项"><code>collect(S,v)</code>—— 按指定变量<code>v</code>的次数对符号多项式<code>S</code>合并同类项</h4>
@@ -385,18 +385,18 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 <p> </p>
 <h4 id="T-taylor（f，var，a）近似于-f，在点-var-a-处用-f-的泰勒级数展开。"><code>T = taylor（f，var，a）</code>近似于<code> f</code>，在点 <code>var = a</code> 处用 <code>f</code> 的泰勒级数展开。</h4>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms x<br>T1 = taylor(<span class="hljs-built_in">exp</span>(x))<br></code></pre></td></tr></table></figure>
-<p><img src="5.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="5.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">T2 = taylor(<span class="hljs-built_in">sin</span>(x))<br></code></pre></td></tr></table></figure>
-<p><img src="6.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<p><img src="6.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
 （默认展开5阶）<br>
  </p>
 <p> </p>
 <h3 id="（5）符号函数求解">（5）符号函数求解</h3>
 <h4 id="solve函数——方程和系统求解器"><code>solve函数</code>——方程和系统求解器</h4>
 <p><code>solve(eq,v)</code>：对指定变量v求解方程eq的根。</p>
-<p><img src="7.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="7.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <p>指定<code>v</code>时：<br>
-<img src="8.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<img src="8.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
  <br>
  <br>
  <br>
@@ -408,9 +408,9 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms u v<br>eqns = [<span class="hljs-number">2</span>*u + v == <span class="hljs-number">0</span>, u - v == <span class="hljs-number">1</span>];<br>S = solve(eqns,[u v])<br>S = <br> 包含以下字段的 struct:<br>u: <span class="hljs-number">1</span>/<span class="hljs-number">3</span><br>v: <span class="hljs-number">-2</span>/<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
 <p> <br>
 例子：<br>
-<img src="9.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="9.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">syms u v<br>eqns = [<span class="hljs-number">2</span>*u^<span class="hljs-number">2</span> + v^<span class="hljs-number">2</span> == <span class="hljs-number">0</span>, u - v == <span class="hljs-number">1</span>];<br>vars = [v u];<br>[solv, solu] = solve(eqns,vars)<br></code></pre></td></tr></table></figure>
-<p><img src="10.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<p><img src="10.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
  <br>
  <br>
  </p>
@@ -418,7 +418,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 <li>
 <p>==解决高阶多项式方程==<br>
 解决高阶多项式方程时，<code>solve</code>函数可能返回含root的隐式解，尝试通过使用<code>“MaxDegree”</code>调用求解器来获得此类方程的显式解。该选项指定求解器尝试返回显式解的最大多项式次数。默认值为 <code>2</code>。增加此值，您可以获得高阶多项式的显式解。<br>
-<img src="11.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="11.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x<br>p = x^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*x - <span class="hljs-number">16</span>;<br>R = solve(p,x)<br>R =<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">1</span>)<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">2</span>)<br>root(z^<span class="hljs-number">3</span> + <span class="hljs-number">3</span>*z - <span class="hljs-number">16</span>, z, <span class="hljs-number">3</span>)<br>&gt;&gt; Rexplicit = solve(p,x,<span class="hljs-string">&quot;MaxDegree&quot;</span>,<span class="hljs-number">3</span>)<br>Rexplicit =<br>                                                                     (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) - <span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)<br><span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)) - (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)/<span class="hljs-number">2</span> - (<span class="hljs-number">3</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)*(<span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) + (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))*<span class="hljs-number">1</span><span class="hljs-built_in">i</span>)/<span class="hljs-number">2</span><br><span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)) - (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>)/<span class="hljs-number">2</span> + (<span class="hljs-number">3</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)*(<span class="hljs-number">1</span>/(<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>) + (<span class="hljs-number">65</span>^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>) + <span class="hljs-number">8</span>)^(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))*<span class="hljs-number">1</span><span class="hljs-built_in">i</span>)/<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -427,14 +427,14 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
  </p>
 <ul>
 <li>==solve函数可以求解不等式并返回满足不等式的解==。解决以下不等式<br>
-<img src="12.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<img src="12.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></li>
 </ul>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs matlab">&gt;&gt; syms x y<br>eqn1 = x &gt; <span class="hljs-number">0</span>;<br>eqn2 = y &gt; <span class="hljs-number">0</span>;<br>eqn3 = x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span> + x*y &lt; <span class="hljs-number">1</span>;<br>eqns = [eqn1 eqn2 eqn3];<br><br>S = solve(eqns,[x y],<span class="hljs-string">&#x27;ReturnConditions&#x27;</span>,<span class="hljs-built_in">true</span>);<br>&gt;&gt; S<br>S = <br>  包含以下字段的 struct:<br><br>             x: (- <span class="hljs-number">3</span>*v^<span class="hljs-number">2</span> + u)^(<span class="hljs-number">1</span>/<span class="hljs-number">2</span>)/<span class="hljs-number">2</span> - v/<span class="hljs-number">2</span><br>             y: v<br>    parameters: [u    v]<br>    conditions: <span class="hljs-number">4</span>*v^<span class="hljs-number">2</span> &lt; u &amp; u &lt; <span class="hljs-number">4</span> &amp; <span class="hljs-number">0</span> &lt; v<br></code></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="fsolve函数——对非线性方程组求解"><code>fsolve函数</code>——对非线性方程组求解</h4>
 <p><code>x = fsolve(fun,x0)</code> 从 <code>x0</code> 开始，尝试求解方程 <code>fun(x) = 0</code>（全零数组）。</p>
 <p>需要一个函数文件 root2d.m</p>
-<p><img src="13.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="13.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <h3 id="（6）符号积分变换">（6）符号积分变换</h3>
 <p>（学完信号与系统后补充）</p>
 <h4 id="①Laplace变换">①Laplace变换</h4>
@@ -458,7 +458,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
     
       <span class="category-chain">
         
-  <a href="/categories/Matlab/" class="category-chain-item">Matlab</a>
+  <a href="/Medipole/Blog/categories/Matlab/" class="category-chain-item">Matlab</a>
   
   
 
@@ -473,7 +473,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Matlab/" class="print-no-link">#Matlab</a>
+        <a href="/Medipole/Blog/tags/Matlab/" class="print-no-link">#Matlab</a>
       
     </div>
   
@@ -486,7 +486,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
   <div class="license-box my-3">
     <div class="license-title">
       <div>Matlab基础(四)符号计算</div>
-      <div>https://medipole.github.io/2025/03/18/Matlab基础-四-符号计算/</div>
+      <div>https://github.com/Medipole/Blog/2025/03/18/Matlab基础-四-符号计算/</div>
     </div>
     <div class="license-meta">
       
@@ -530,7 +530,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/" title="Matlab基础(五)可视化功能">
+                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8A%9F%E8%83%BD/" title="Matlab基础(五)可视化功能">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Matlab基础(五)可视化功能</span>
                         <span class="visible-mobile">上一篇</span>
@@ -540,7 +540,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" title="Matlab基础(三)数值计算">
+                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" title="Matlab基础(三)数值计算">
                         <span class="hidden-mobile">Matlab基础(三)数值计算</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -674,8 +674,8 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/Medipole/Blog/js/events.js" ></script>
+<script  src="/Medipole/Blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -697,7 +697,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/Medipole/Blog/js/img-lazyload.js" ></script>
   
 
 
@@ -796,7 +796,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/Medipole/Blog/js/local-search.js" ></script>
 
 
 
@@ -804,7 +804,7 @@ g=finverse(f,v)——求符号函数<code>f</code>对指定自变量<code>v</cod
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/Medipole/Blog/js/boot.js" ></script>
 
 
   

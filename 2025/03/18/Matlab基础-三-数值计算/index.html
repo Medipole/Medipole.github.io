@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Medipole/Blog/img/fluid.png">
+  <link rel="icon" href="/Medipole/Blog/img/fluid.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -22,24 +22,24 @@
     <meta name="description" content="Matlab 课堂入门笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab基础(三)数值计算">
-<meta property="og:url" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/index.html">
+<meta property="og:url" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/index.html">
 <meta property="og:site_name" content="Payton 随笔">
 <meta property="og:description" content="Matlab 课堂入门笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/1.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/2.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/3.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/4.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/5.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/6.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/7.png">
-<meta property="og:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/8.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/1.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/2.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/3.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/4.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/5.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/6.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/7.png">
+<meta property="og:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/8.png">
 <meta property="article:published_time" content="2025-03-18T12:18:01.000Z">
 <meta property="article:modified_time" content="2025-03-18T13:09:38.360Z">
 <meta property="article:author" content="Payton">
 <meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://medipole.github.io/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/1.png">
+<meta name="twitter:image" content="https://github.com/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E4%B8%89-%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/1.png">
   
   
   
@@ -69,12 +69,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/Medipole/Blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/Medipole/Blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/Medipole/Blog/css/highlight-dark.css" />
   
 
 
@@ -83,15 +83,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"medipole.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/Medipole/Blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/Medipole/Blog/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/Medipole/Blog/js/utils.js" ></script>
+  <script  src="/Medipole/Blog/js/color-schema.js" ></script>
   
 
 
@@ -108,7 +108,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/Medipole/Blog/">
       <strong>Payton</strong>
     </a>
 
@@ -127,7 +127,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -139,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -151,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -163,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -175,7 +175,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/Medipole/Blog/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -205,7 +205,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/Medipole/Blog/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -295,7 +295,7 @@
 <h2 id="2-矩阵的乘法">(2)矩阵的乘法</h2>
 <h3 id="①正常乘（-）">①正常乘（*）</h3>
 <p>C = A*B 是 A 和 B 的矩阵乘积。如果 A 是 m×p 矩阵，B 是 p×n 矩阵，则 C 是通过以下公式定义的 m×n 矩阵：<br>
-<img src="1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="1.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <h3 id="②数乘（-）">②数乘（*）</h3>
 <p>用这个常数去乘矩阵的每一个元素</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python">c =<br>     <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>     <span class="hljs-number">4</span>     <span class="hljs-number">5</span>     <span class="hljs-number">6</span><br>&gt;&gt; <span class="hljs-number">3</span>*c<br>ans =<br>     <span class="hljs-number">3</span>     <span class="hljs-number">6</span>     <span class="hljs-number">9</span><br>    <span class="hljs-number">12</span>    <span class="hljs-number">15</span>    <span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
@@ -311,7 +311,7 @@
 <p>考虑两个二维输入数组：A 和 B：</p>
 <p><code>dot(A,B,1)</code> 将 A 和 B 的列视为向量，并返回对应列的点积。</p>
 <p><code>dot(A,B,2)</code> 将 A 和 B 的行视为向量，并返回对应行的点积。<br>
-<img src="2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="2.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <p>如果 <code>dim</code> 大于 <code>ndims(A)</code>，则 <code>dot</code> 返回 <code>conj(A).*B</code>。</p>
 <h3 id="⑤向量积（cross）">⑤向量积（cross）</h3>
 <p>返回 A 和 B 的叉积<br>
@@ -365,7 +365,7 @@ cross(A,B,dim)</strong></p>
 </li>
 </ul>
 <h2 id="5-矩阵的操作与变换">(5)矩阵的操作与变换</h2>
-<p><img src="3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="3.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <p><code>inv(A)</code>:计算非奇异矩阵的逆矩阵<br>
 <code>det(A)</code>:计算方阵的行列式<br>
 <code>rank(A)</code>:计算方阵的秩<br>
@@ -415,8 +415,8 @@ p 中的系数按降幂排列，p 的长度为 n+1<br>
 <p>示例:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">x = <span class="hljs-number">0</span>:pi/<span class="hljs-number">4</span>:<span class="hljs-number">2</span>*pi; <br>v = sin(x);<br>xq = <span class="hljs-number">0</span>:pi/<span class="hljs-number">16</span>:<span class="hljs-number">2</span>*pi;<br>vq1 = interp1(x,v,xq);<br>plot(x,v,<span class="hljs-string">&#x27;o&#x27;</span>,xq,vq1,<span class="hljs-string">&#x27;:.&#x27;</span>);<br></code></pre></td></tr></table></figure>
 <p>输出<br>
-<img src="4.png" srcset="/img/loading.gif" lazyload alt=""><br>
-<img src="5.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="4.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
+<img src="5.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <p><code>vq = interp1(x,v,xq,method,extrapolation)</code> 用于指定外插策略，来计算落在 x 域范围外的点。如果希望使用 method 算法进行外插，可将 extrapolation 设置为 <code>'extrap'</code>。您也可以指定一个标量值，这种情况下，interp1 将为所有落在 x 域范围外的点返回该标量值。</p>
 <p> <br>
  </p>
@@ -435,16 +435,16 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
 <h3 id="⑤residue">⑤residue</h3>
 <pre><code class="hljs">[r,p,k] = residue(b,a)
 </code></pre>
-<p><img src="6.png" srcset="/img/loading.gif" lazyload alt=""><br>
+<p><img src="6.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""><br>
 定义较为复杂，可在Matlab中查看示例（<code>help residue</code>）</p>
 <ul>
 <li>例如：使用 <code>residue</code> 求以下多项式之比 <code>F(s)</code> 的部分分式展开式<br>
-<img src="7.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<img src="7.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">b = [-<span class="hljs-number">4</span> <span class="hljs-number">8</span>];<br>a = [<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">8</span>];<br>[r,p,k] = residue(b,a)<br></code></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">r =<br>   -<span class="hljs-number">12</span><br>     <span class="hljs-number">8</span> <br>p =<br>    -<span class="hljs-number">4</span><br>    -<span class="hljs-number">2</span><br>k =<br>     []<br></code></pre></td></tr></table></figure>
-<p><img src="8.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="8.png" srcset="/Medipole/Blog/img/loading.gif" lazyload alt=""></p>
 <p>也可以使用 residue 将部分分式展开转换回多项式系数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">[b,a] = residue(r,p,k)<br></code></pre></td></tr></table></figure>
 <p>此处部分分式展开的计算可以与“<code>信号与系统</code>”中求解单位冲激响应联系起来。</p>
@@ -593,7 +593,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
     
       <span class="category-chain">
         
-  <a href="/categories/Matlab/" class="category-chain-item">Matlab</a>
+  <a href="/Medipole/Blog/categories/Matlab/" class="category-chain-item">Matlab</a>
   
   
 
@@ -608,7 +608,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Matlab/" class="print-no-link">#Matlab</a>
+        <a href="/Medipole/Blog/tags/Matlab/" class="print-no-link">#Matlab</a>
       
     </div>
   
@@ -621,7 +621,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
   <div class="license-box my-3">
     <div class="license-title">
       <div>Matlab基础(三)数值计算</div>
-      <div>https://medipole.github.io/2025/03/18/Matlab基础-三-数值计算/</div>
+      <div>https://github.com/Medipole/Blog/2025/03/18/Matlab基础-三-数值计算/</div>
     </div>
     <div class="license-meta">
       
@@ -665,7 +665,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/" title="Matlab基础(四)符号计算">
+                      <a href="/Medipole/Blog/2025/03/18/Matlab%E5%9F%BA%E7%A1%80-%E5%9B%9B-%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/" title="Matlab基础(四)符号计算">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Matlab基础(四)符号计算</span>
                         <span class="visible-mobile">上一篇</span>
@@ -675,7 +675,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/" title="MATLAB基础(二)向量与矩阵">
+                      <a href="/Medipole/Blog/2025/03/18/MATLAB%E5%9F%BA%E7%A1%80-%E4%BA%8C-%E5%90%91%E9%87%8F%E4%B8%8E%E7%9F%A9%E9%98%B5/" title="MATLAB基础(二)向量与矩阵">
                         <span class="hidden-mobile">MATLAB基础(二)向量与矩阵</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -809,8 +809,8 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/Medipole/Blog/js/events.js" ></script>
+<script  src="/Medipole/Blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -832,7 +832,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/Medipole/Blog/js/img-lazyload.js" ></script>
   
 
 
@@ -931,7 +931,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/Medipole/Blog/js/local-search.js" ></script>
 
 
 
@@ -939,7 +939,7 @@ polyder(A,B)：计算多项式A与B乘积的导数<br>
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/Medipole/Blog/js/boot.js" ></script>
 
 
   
